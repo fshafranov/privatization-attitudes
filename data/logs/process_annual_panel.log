@@ -1,0 +1,25 @@
+2026-11-22 23:20:54 [info     ] start                            script=process_annual_panel
+2026-11-22 23:20:55 [info     ] merge                            how=left left_match_rate=1.0 left_only=0 left_rows=275109 matched_rows=275109 name='person x household' on=['id_h', 'id_w'] right_match_rate=0.5773 right_only=75391 right_rows=178343 script=process_annual_panel validate=m:1
+2026-11-22 23:20:55 [info     ] shape                            cols=13 data='person x household result' rows=275109 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] attrition_start                  data='person-years 2003-2018' obs=275109 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] attrition                        before=275109 dropped=59436 remaining=215673 script=process_annual_panel step='age 18+'
+2026-11-22 23:20:55 [info     ] attrition                        before=215673 dropped=99581 remaining=116092 script=process_annual_panel step='observed as adult in 2006 (baseline)'
+2026-11-22 23:20:55 [info     ] attrition                        before=116092 dropped=2208 remaining=113884 script=process_annual_panel step='2006 tenure classifiable (own vs not)'
+2026-11-22 23:20:55 [info     ] attrition                        before=113884 dropped=0 remaining=113884 script=process_annual_panel step='same PSU as in 2006'
+2026-11-22 23:20:55 [info     ] merge                            how=left left_match_rate=1.0 left_only=0 left_rows=113884 matched_rows=113884 name='person x crosswalk' on=['psu'] right_match_rate=1.0 right_only=0 right_rows=38 script=process_annual_panel validate=m:1
+2026-11-22 23:20:55 [info     ] shape                            cols=16 data='person x crosswalk result' rows=113884 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] merge                            how=left left_match_rate=0.9346 left_only=7451 left_rows=113884 matched_rows=106433 name='person x regional price (2004 has no price data)' on=['okato11', 'year'] right_match_rate=0.2567 right_only=1390 right_rows=1870 script=process_annual_panel validate=m:1
+2026-11-22 23:20:55 [info     ] shape                            cols=17 data='person x regional price (2004 has no price data) result' rows=113884 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] merge                            how=left left_match_rate=1.0 left_only=0 left_rows=113884 matched_rows=113884 name='person x 2008-09 regional bust' on=['okato11'] right_match_rate=0.381 right_only=52 right_rows=84 script=process_annual_panel validate=m:1
+2026-11-22 23:20:55 [info     ] shape                            cols=18 data='person x 2008-09 regional bust result' rows=113884 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] attrition_summary                dropped=161225 final=113884 script=process_annual_panel start=275109 table='\n                                 step  before  dropped  remaining  cumulative_dropped\n               person-years 2003-2018  275109        0     275109                   0\n                              age 18+  275109    59436     215673               59436\n observed as adult in 2006 (baseline)  215673    99581     116092              159017\n2006 tenure classifiable (own vs not)  116092     2208     113884              161225\n                  same PSU as in 2006  113884        0     113884              161225'
+2026-11-22 23:20:55 [info     ] wrote                            cols=16 file=data/processed/annual_panel/annual_panel_dropped.csv rows=161225 script=process_annual_panel
+2026-11-22 23:20:55 [info     ] variable                         count=113221 max=5.0 mean=3.046458 min=1.0 script=process_annual_panel share_missing=0.0058 var=life_sat
+2026-11-22 23:20:55 [info     ] variable                         count=113241 max=5.0 mean=2.374061 min=1.0 script=process_annual_panel share_missing=0.0056 var=econ_sat
+2026-11-22 23:20:55 [info     ] variable                         count=49388 max=1.0 mean=0.165486 min=0.0 script=process_annual_panel share_missing=0.5663 var=trust_people
+2026-11-22 23:20:55 [info     ] variable                         count=113884 max=0.15131696961789548 mean=-0.097328 min=-0.46572614153970265 script=process_annual_panel share_missing=0.0 var=bust_0809
+2026-11-22 23:20:55 [info     ] variable                         count=113884 max=10.2360410271498 mean=8.326114 min=5.327194150322195 script=process_annual_panel share_missing=0.0 var=local_inc
+2026-11-22 23:20:55 [info     ] variable                         count=113884 max=1.0 mean=0.764919 min=0.0 script=process_annual_panel share_missing=0.0 var=owner_2006
+2026-11-22 23:20:55 [info     ] panel                            owners_2006_share=0.742 persons=11411 script=process_annual_panel years=[2003.0, 2004.0, 2005.0, 2006.0, 2007.0, 2008.0, 2009.0, 2010.0, 2011.0, 2012.0, 2013.0, 2014.0, 2015.0, 2016.0, 2017.0, 2018.0]
+2026-11-22 23:20:56 [info     ] wrote                            cols=28 file=data/processed/annual_panel/annual_panel.csv rows=113884 script=process_annual_panel
+2026-11-22 23:20:56 [info     ] end                              script=process_annual_panel
