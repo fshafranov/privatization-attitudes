@@ -55,16 +55,21 @@ Last updated: 2026-11-23
   (wild p 0.026) with person + unit-by-year FE; +0.033 (wild p 0.392) with age-by-year FE;
   democracy index -0.075 (p 0.296) and -0.067 (p 0.340). Same signs and sizes as the survey
   index, less precise.
-- **Event study and income control (D14-D16, `05_analyze_event_study.py`, fig8):** around the
-  2008-09 regional price bust there is no clear break for owners. Pre-2007 coefficients are
-  jointly insignificant (economic satisfaction p 0.176, life satisfaction p 0.124) but noisy;
-  pooled post-bust estimates are 0.179 (wild p 0.285) and -0.118 (wild p 0.566). In the annual
-  design, owners' economic satisfaction falls slightly as regional prices rise (-0.072, wild p
-  0.037), but adding owner x local income removes it (0.003, wild p 0.968). Political four-round
-  design with the income control (r6): trust index 0.104 (wild p 0.429), democracy -0.068 (wild p 0.532).
-- **Bottom line:** no robust evidence that housing-wealth changes moved owners' attitudes or
-  satisfaction. Where an association appears it is explained by regional income growth, the
-  confound the design was worried about. The housing route does not deliver a causal finding.
+- **Correction (D19, 2026-11-23):** the owner x log price designs picked up a general
+  owner/non-owner trend (prices rose almost everywhere). The permutation test showed it: with
+  r3, permuted coefficients were centred far from zero. With owner-by-year FE (r7, preferred), the
+  permutation means are about 0 and the estimates become: trust index -0.171 (wild p 0.285,
+  permutation p 0.342), democracy -0.120 (wild p 0.507, permutation p 0.462), trust in government
+  -0.402 (wild p 0.090, permutation p 0.100). Earlier positive "loyalty" estimates are superseded.
+- **Robustness (R2, D17):** 72 baseline x year controls or LASSO-selected ones leave r7 unchanged
+  (trust index -0.174 / -0.175; democracy -0.095 / -0.098); + local income: -0.130 / -0.096.
+- **Second-flat households (D18):** no extra response (owners only, trust index -0.026, wild p 0.805;
+  democracy -0.092, wild p 0.219); 445 people, 329 of them owners.
+- **Event study with owner-by-year FE:** pre-2007 coefficients jointly zero (economic satisfaction
+  p 0.634, life satisfaction p 0.352); pooled post-bust 0.060 (wild p 0.726) and -0.185 (wild p 0.440).
+- **Bottom line:** no evidence that housing-wealth changes moved owners' political attitudes or
+  satisfaction. The only near-significant estimate (trust in government, p about 0.09) points to
+  less trust, the opposite of the "more to lose -> loyal" story. Treat as a null result.
 - **Next step:** user decision: park, or chase the housing hint with a design that has outside
   variation in privatization timing (none found in RLMS so far).
 
@@ -168,3 +173,15 @@ Last updated: 2026-11-23
   after the cluster-code change.
 - Key decisions: D14-D16.
 - Commit: see git log on feature/annual-event-study
+
+### 2026-11-23 (c)
+- Done: branch feature/flexible-controls: baseline characteristics and second-flat items;
+  `07_robust_flexible_controls.py` (R2, LASSO post-double-selection), `08_analyze_second_flat.py`,
+  `09_robust_permutation.py` (R3), `10_explore_robustness_figures.py`; owner-by-year FE (D19) added
+  to all owner x price designs; fig7 now shows the corrected specification.
+- Succeeded: the permutation test caught the owner-trend confound; after the fix the permutation
+  distributions are centred at zero and the event-study pre-trends are clean.
+- Failed: sklearn LassoCV no longer accepts n_alphas (explicit alpha grid); pandas Int64->str keeps
+  NaN (missing categories fixed); nfm1_n asked of about a fifth of households (size counted instead).
+- Key decisions: D17-D19.
+- Commit: see git log on feature/flexible-controls

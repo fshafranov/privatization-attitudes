@@ -197,15 +197,44 @@ histories are recorded before the outcome but are not assigned at random.
 - Wild bootstrap with several regressors: the other regressors are partialled out (FWL) before
   bootstrapping; cluster codes are passed as integers because the bootstrap rejects strings.
 
+### D17 Flexible baseline-by-year controls (R2)
+- **Script:** `07_robust_flexible_controls.py`; baseline variables built in `process_housing_wealth.py`.
+- 2006 characteristics (education `diplom`, income tercile of `j60`, work status `j1`, state
+  employer `j23`, marital status `marst`, settlement type, household size = people with an
+  individual record in the household in 2006; missing values as their own category) interacted
+  with 2012/2017/2018 dummies: 72 controls after dropping cells with fewer than 20 observations.
+  f1 includes all; f2 keeps those selected by post-double-selection LASSO (selection on
+  FE-residualized outcome and treatment, penalty by 5-fold cross-validation with folds grouped by
+  region); f3 = f1 + owner x local income.
+
+### D18 Second-flat households
+- `second_flat_2006` = household owns another apartment in 2006 (`c9_12a`). Rental income
+  (`f12_5a`) is too rare (77 households in 2006) to use. h1: extra price response of second-flat
+  households on top of the owner response; h2: owners only, second-flat vs single-flat owners.
+
+### D19 Owner-by-year fixed effects (preferred specification)
+- **Decision:** add owner_2006 x year fixed effects to every owner x price design (political r7/s7/
+  r8, annual a1/a2, event study, R2, R3, second-flat split). Without them, owner x log price also
+  picks up any general owner/non-owner trend, because prices rose almost everywhere.
+- **Evidence:** the permutation test (R3) of r3 was centred far from zero (mean about +0.045 for
+  the trust index) instead of at zero; with owner-by-year FE the permutation means are about 0.
+- **Downstream implications:** identification now comes only from cross-regional differences in
+  price changes; standard errors roughly quadruple; earlier "owners trust more" estimates are
+  superseded.
+- **Status:** settled (2026-11-23).
+
 ## 5. Robustness checks
 | ID | Check | Script | Status |
 |---|---|---|---|
 | R1 | Ordered outcome (j223 1–4) | not written | planned only if a main block shows signal |
+| R2 | Flexible baseline x year controls (all, LASSO-selected, + local income) | `empirics/scripts/07_robust_flexible_controls.py` | done |
+| R3 | Permutation of regional price paths | `empirics/scripts/09_robust_permutation.py` | done |
 
 ## 6. Change log
 | Date | Change | Reason | Pre-specified? |
 |---|---|---|---|
 | 2026-11-22 | Plan drafted | | yes |
+| 2026-11-23 | Flexible controls (D17), second-flat split (D18), owner-by-year FE (D19) | permutation test revealed an owner-trend confound | no |
 | 2026-11-23 | Annual outcomes, 2008-09 event study, income control (D14-D16) | test pre-trends and the regional-boom confound | no |
 | 2026-11-23 | External regional prices (D13) added | statbase pages collected at the user's request | no |
 | 2026-11-22 | Added housing-wealth trial (D9-D12) with an internal price index | Rosstat download blocked by certificate; trial run requested | no |
