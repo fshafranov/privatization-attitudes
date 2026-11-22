@@ -1,36 +1,36 @@
-2026-11-22 23:13:00 [info     ] start                            script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] shape                            cols=69 data=rlms_ind rows=474600 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] shape                            cols=12 data=rlms_hh rows=178343 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] attrition_start                  data='2006 round, all individuals' obs=14689 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] attrition                        before=14689 dropped=3046 remaining=11643 script=process_longrun_2006 step='age 18+ (adult questionnaire)'
-2026-11-22 23:13:01 [info     ] attrition                        before=11643 dropped=36 remaining=11607 script=process_longrun_2006 step='j223 asked and answered or DK'
-2026-11-22 23:13:01 [info     ] attrition_summary                dropped=3082 final=11607 script=process_longrun_2006 start=14689 table='\n                         step  before  dropped  remaining  cumulative_dropped\n  2006 round, all individuals   14689        0      14689                   0\nage 18+ (adult questionnaire)   14689     3046      11643                3046\nj223 asked and answered or DK   11643       36      11607                3082'
-2026-11-22 23:13:01 [info     ] wrote                            cols=70 file=data/processed/longrun_2006/longrun_2006_dropped.csv rows=3082 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] merge                            how=left left_match_rate=0.5948 left_only=2654 left_rows=6550 matched_rows=3896 name='shares early x later' on=['idind'] right_match_rate=0.3943 right_only=5984 right_rows=9880 script=process_longrun_2006 validate=1:1
-2026-11-22 23:13:01 [info     ] shape                            cols=3 data='shares early x later result' rows=6550 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] merge                            how=inner left_match_rate=0.8954 left_only=8232 left_rows=78714 matched_rows=70482 name='person x household c2' on=['id_h', 'id_w'] right_match_rate=0.9995 right_only=12 right_rows=25579 script=process_longrun_2006 validate=m:1
-2026-11-22 23:13:01 [info     ] shape                            cols=4 data='person x household c2 result' rows=70482 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] merge                            how=left left_match_rate=0.2523 left_only=8678 left_rows=11607 matched_rows=2929 name='2006 x shares' on=['idind'] right_match_rate=0.4472 right_only=3621 right_rows=6550 script=process_longrun_2006 validate=1:1
-2026-11-22 23:13:01 [info     ] shape                            cols=71 data='2006 x shares result' rows=11607 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] merge                            how=left left_match_rate=0.6108 left_only=4518 left_rows=11607 matched_rows=7089 name='2006 x housing' on=['idind'] right_match_rate=0.3699 right_only=12077 right_rows=19166 script=process_longrun_2006 validate=1:1
-2026-11-22 23:13:01 [info     ] shape                            cols=72 data='2006 x housing result' rows=11607 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] index                            complete_cases=9520 components=['keep_scale', 'rich_by_work', 'rich_not_crime', 'rich_not_connections', 'millionaire_hard_work', 'millionaire_not_criminal', 'not_return_to_state', 'not_price_regulation', 'no_need_reduce_inequality'] corr_with_revise=-0.444 cronbach_alpha=0.538 n=11421 script=process_longrun_2006 var=idx_market_legit
-2026-11-22 23:13:01 [info     ] variable                         count=11421 max=4.149140858163454 mean=0.0 min=-1.83737895334122 script=process_longrun_2006 share_missing=0.016 var=idx_market_legit
-2026-11-22 23:13:01 [info     ] index                            complete_cases=9084 components=['free_elections', 'free_speech', 'free_press', 'opposition', 'two_term_limit', 'against_appointed_governors'] corr_with_revise=-0.026 cronbach_alpha=0.643 n=11349 script=process_longrun_2006 var=idx_democracy
-2026-11-22 23:13:01 [info     ] variable                         count=11349 max=1.9018609506059878 mean=0.0 min=-5.000377979271103 script=process_longrun_2006 share_missing=0.0222 var=idx_democracy
-2026-11-22 23:13:01 [info     ] index                            complete_cases=9183 components=['trust_government', 'trust_duma', 'trust_courts', 'trust_army', 'trust_police', 'trust_parties'] corr_with_revise=-0.06 cronbach_alpha=0.878 n=11289 script=process_longrun_2006 var=idx_trust_state
-2026-11-22 23:13:01 [info     ] variable                         count=11289 max=2.839065245521919 mean=0.0 min=-2.072228994313664 script=process_longrun_2006 share_missing=0.0274 var=idx_trust_state
-2026-11-22 23:13:01 [info     ] index                            complete_cases=10005 components=['national_govt_responsive', 'regional_govt_responsive', 'corruption_declined'] corr_with_revise=-0.067 cronbach_alpha=0.791 n=11004 script=process_longrun_2006 var=idx_state_approval
-2026-11-22 23:13:01 [info     ] variable                         count=11004 max=3.0472571501435404 mean=-0.0 min=-1.4219457104435373 script=process_longrun_2006 share_missing=0.052 var=idx_state_approval
-2026-11-22 23:13:01 [info     ] variable                         count=10086 max=1.0 mean=0.658735 min=0.0 script=process_longrun_2006 share_missing=0.131 var=revise
-2026-11-22 23:13:01 [info     ] variable                         count=10086 max=1.0 mean=0.531925 min=0.0 script=process_longrun_2006 share_missing=0.131 var=nationalize
-2026-11-22 23:13:01 [info     ] variable                         count=11607 max=1.0 mean=0.131042 min=0.0 script=process_longrun_2006 share_missing=0.0 var=dont_know
-2026-11-22 23:13:01 [info     ] variable                         count=11607 max=1.0 mean=0.650125 min=0.0 script=process_longrun_2006 share_missing=0.0 var=rich_by_crime
-2026-11-22 23:13:01 [info     ] variable                         count=2929 max=1.0 mean=0.288153 min=0.0 script=process_longrun_2006 share_missing=0.7477 var=share_owner_early
-2026-11-22 23:13:01 [info     ] variable                         count=740 max=1.0 mean=0.463514 min=0.0 script=process_longrun_2006 share_missing=0.9362 var=lost_shares
-2026-11-22 23:13:01 [info     ] variable                         count=7251 max=1.0 mean=0.027582 min=0.0 script=process_longrun_2006 share_missing=0.3753 var=coop_1980s
-2026-11-22 23:13:01 [info     ] variable                         count=11607 max=100.5 mean=44.823167 min=18.0 script=process_longrun_2006 share_missing=0.0 var=age
-2026-11-22 23:13:01 [info     ] variable                         count=11281 max=12.628070334272698 mean=7.579189 min=0.0 script=process_longrun_2006 share_missing=0.0281 var=log_income
-2026-11-22 23:13:01 [info     ] housing_path                     counts={nan: 5241, 'privatized_at_first_obs': 3617, 'never_privatized': 1482, 'became_privatized': 759, 'unclear': 508} script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] wrote                            cols=24 file=data/processed/longrun_2006/longrun_2006.csv rows=11607 script=process_longrun_2006
-2026-11-22 23:13:01 [info     ] end                              script=process_longrun_2006
+2026-11-22 23:23:12 [info     ] start                            script=process_longrun_2006
+2026-11-22 23:23:12 [info     ] shape                            cols=73 data=rlms_ind rows=474600 script=process_longrun_2006
+2026-11-22 23:23:12 [info     ] shape                            cols=12 data=rlms_hh rows=178343 script=process_longrun_2006
+2026-11-22 23:23:12 [info     ] attrition_start                  data='2006 round, all individuals' obs=14689 script=process_longrun_2006
+2026-11-22 23:23:12 [info     ] attrition                        before=14689 dropped=3046 remaining=11643 script=process_longrun_2006 step='age 18+ (adult questionnaire)'
+2026-11-22 23:23:12 [info     ] attrition                        before=11643 dropped=36 remaining=11607 script=process_longrun_2006 step='j223 asked and answered or DK'
+2026-11-22 23:23:12 [info     ] attrition_summary                dropped=3082 final=11607 script=process_longrun_2006 start=14689 table='\n                         step  before  dropped  remaining  cumulative_dropped\n  2006 round, all individuals   14689        0      14689                   0\nage 18+ (adult questionnaire)   14689     3046      11643                3046\nj223 asked and answered or DK   11643       36      11607                3082'
+2026-11-22 23:23:13 [info     ] wrote                            cols=74 file=data/processed/longrun_2006/longrun_2006_dropped.csv rows=3082 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] merge                            how=left left_match_rate=0.5948 left_only=2654 left_rows=6550 matched_rows=3896 name='shares early x later' on=['idind'] right_match_rate=0.3943 right_only=5984 right_rows=9880 script=process_longrun_2006 validate=1:1
+2026-11-22 23:23:13 [info     ] shape                            cols=3 data='shares early x later result' rows=6550 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] merge                            how=inner left_match_rate=0.8954 left_only=8232 left_rows=78714 matched_rows=70482 name='person x household c2' on=['id_h', 'id_w'] right_match_rate=0.9995 right_only=12 right_rows=25579 script=process_longrun_2006 validate=m:1
+2026-11-22 23:23:13 [info     ] shape                            cols=4 data='person x household c2 result' rows=70482 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] merge                            how=left left_match_rate=0.2523 left_only=8678 left_rows=11607 matched_rows=2929 name='2006 x shares' on=['idind'] right_match_rate=0.4472 right_only=3621 right_rows=6550 script=process_longrun_2006 validate=1:1
+2026-11-22 23:23:13 [info     ] shape                            cols=75 data='2006 x shares result' rows=11607 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] merge                            how=left left_match_rate=0.6108 left_only=4518 left_rows=11607 matched_rows=7089 name='2006 x housing' on=['idind'] right_match_rate=0.3699 right_only=12077 right_rows=19166 script=process_longrun_2006 validate=1:1
+2026-11-22 23:23:13 [info     ] shape                            cols=76 data='2006 x housing result' rows=11607 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] index                            complete_cases=9520 components=['keep_scale', 'rich_by_work', 'rich_not_crime', 'rich_not_connections', 'millionaire_hard_work', 'millionaire_not_criminal', 'not_return_to_state', 'not_price_regulation', 'no_need_reduce_inequality'] corr_with_revise=-0.444 cronbach_alpha=0.538 n=11421 script=process_longrun_2006 var=idx_market_legit
+2026-11-22 23:23:13 [info     ] variable                         count=11421 max=4.149140858163454 mean=0.0 min=-1.83737895334122 script=process_longrun_2006 share_missing=0.016 var=idx_market_legit
+2026-11-22 23:23:13 [info     ] index                            complete_cases=9084 components=['free_elections', 'free_speech', 'free_press', 'opposition', 'two_term_limit', 'against_appointed_governors'] corr_with_revise=-0.026 cronbach_alpha=0.643 n=11349 script=process_longrun_2006 var=idx_democracy
+2026-11-22 23:23:13 [info     ] variable                         count=11349 max=1.9018609506059878 mean=0.0 min=-5.000377979271103 script=process_longrun_2006 share_missing=0.0222 var=idx_democracy
+2026-11-22 23:23:13 [info     ] index                            complete_cases=9183 components=['trust_government', 'trust_duma', 'trust_courts', 'trust_army', 'trust_police', 'trust_parties'] corr_with_revise=-0.06 cronbach_alpha=0.878 n=11289 script=process_longrun_2006 var=idx_trust_state
+2026-11-22 23:23:13 [info     ] variable                         count=11289 max=2.839065245521919 mean=0.0 min=-2.072228994313664 script=process_longrun_2006 share_missing=0.0274 var=idx_trust_state
+2026-11-22 23:23:13 [info     ] index                            complete_cases=10005 components=['national_govt_responsive', 'regional_govt_responsive', 'corruption_declined'] corr_with_revise=-0.067 cronbach_alpha=0.791 n=11004 script=process_longrun_2006 var=idx_state_approval
+2026-11-22 23:23:13 [info     ] variable                         count=11004 max=3.0472571501435404 mean=-0.0 min=-1.4219457104435373 script=process_longrun_2006 share_missing=0.052 var=idx_state_approval
+2026-11-22 23:23:13 [info     ] variable                         count=10086 max=1.0 mean=0.658735 min=0.0 script=process_longrun_2006 share_missing=0.131 var=revise
+2026-11-22 23:23:13 [info     ] variable                         count=10086 max=1.0 mean=0.531925 min=0.0 script=process_longrun_2006 share_missing=0.131 var=nationalize
+2026-11-22 23:23:13 [info     ] variable                         count=11607 max=1.0 mean=0.131042 min=0.0 script=process_longrun_2006 share_missing=0.0 var=dont_know
+2026-11-22 23:23:13 [info     ] variable                         count=11607 max=1.0 mean=0.650125 min=0.0 script=process_longrun_2006 share_missing=0.0 var=rich_by_crime
+2026-11-22 23:23:13 [info     ] variable                         count=2929 max=1.0 mean=0.288153 min=0.0 script=process_longrun_2006 share_missing=0.7477 var=share_owner_early
+2026-11-22 23:23:13 [info     ] variable                         count=740 max=1.0 mean=0.463514 min=0.0 script=process_longrun_2006 share_missing=0.9362 var=lost_shares
+2026-11-22 23:23:13 [info     ] variable                         count=7251 max=1.0 mean=0.027582 min=0.0 script=process_longrun_2006 share_missing=0.3753 var=coop_1980s
+2026-11-22 23:23:13 [info     ] variable                         count=11607 max=100.5 mean=44.823167 min=18.0 script=process_longrun_2006 share_missing=0.0 var=age
+2026-11-22 23:23:13 [info     ] variable                         count=11281 max=12.628070334272698 mean=7.579189 min=0.0 script=process_longrun_2006 share_missing=0.0281 var=log_income
+2026-11-22 23:23:13 [info     ] housing_path                     counts={nan: 5241, 'privatized_at_first_obs': 3617, 'never_privatized': 1482, 'became_privatized': 759, 'unclear': 508} script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] wrote                            cols=24 file=data/processed/longrun_2006/longrun_2006.csv rows=11607 script=process_longrun_2006
+2026-11-22 23:23:13 [info     ] end                              script=process_longrun_2006

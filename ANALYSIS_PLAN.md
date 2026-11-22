@@ -172,6 +172,31 @@ histories are recorded before the outcome but are not assigned at random.
 - **Evidence:** PSU-index changes correlate 0.80 with regional price changes (analysis log).
 - **Status:** settled (2026-11-23).
 
+### D14 Annual outcomes
+- **Script:** `process_annual_panel.py`. Life satisfaction (`j65`) and satisfaction with one's
+  economic situation (`j66_1`), asked every year, reversed to 1 = not at all ... 5 = fully
+  satisfied; generalized trust (`j206` = 1 "most people can be trusted"; asked 2006 and 2012-2025,
+  so it enters only the annual design, not the event study). Person-years 2003-2018, adults
+  observed in 2006, tenure fixed at 2006 (D9). These are welfare outcomes, not political ones:
+  RLMS asks no political item every year.
+
+### D15 Event study around the 2008-09 bust
+- **Script:** `05_analyze_event_study.py`. Exposure = regional log change of the Q4 secondary-market
+  price 2008 -> 2009 (mean -0.10, SD 0.14 across the 32 regions). Regressors: owner_2006 x
+  exposure x year dummies for 2003-2013, 2007 omitted (last full pre-crisis year; RLMS 2008
+  interviews fall in the crisis onset). FE: person, unit-by-year, age-group-by-year; SEs
+  clustered by region. Pre-trend test: joint Wald test that the 2003-2006 coefficients are zero.
+  Pooled version: owner x exposure x 1[2009-2013], 2008 dropped.
+- **Alternatives considered:** exposure 2008 -> 2010 (similar ranking); boom exposure 2005 -> 2008
+  (correlates -0.21 with the bust).
+
+### D16 Regional income control
+- Leave-one-out mean of log(1 + personal income last 30 days, `j60`) in the PSU-year, interacted
+  with owner_2006, added to the annual design (a2) and the political four-round design (r6).
+  Separates house prices from a general regional boom that may affect owners differently.
+- Wild bootstrap with several regressors: the other regressors are partialled out (FWL) before
+  bootstrapping; cluster codes are passed as integers because the bootstrap rejects strings.
+
 ## 5. Robustness checks
 | ID | Check | Script | Status |
 |---|---|---|---|
@@ -181,6 +206,7 @@ histories are recorded before the outcome but are not assigned at random.
 | Date | Change | Reason | Pre-specified? |
 |---|---|---|---|
 | 2026-11-22 | Plan drafted | | yes |
+| 2026-11-23 | Annual outcomes, 2008-09 event study, income control (D14-D16) | test pre-trends and the regional-boom confound | no |
 | 2026-11-23 | External regional prices (D13) added | statbase pages collected at the user's request | no |
 | 2026-11-22 | Added housing-wealth trial (D9-D12) with an internal price index | Rosstat download blocked by certificate; trial run requested | no |
 | 2026-11-22 | Added four attitude indices (D7) with multiple-testing correction (D8) | single items noisy; user asked to try indices | no |

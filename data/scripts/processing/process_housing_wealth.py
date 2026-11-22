@@ -10,7 +10,7 @@ Writes:     data/processed/housing_wealth/housing_wealth.csv,
             data/processed/housing_wealth/housing_wealth_dropped.csv,
             data/processed/housing_wealth/price_index.csv, data/logs/process_housing_wealth.log
 Unit:       person-round (idind, year)
-Decisions:  ANALYSIS_PLAN.md D9-D13
+Decisions:  ANALYSIS_PLAN.md D9-D13, D16
 """
 import sys
 from pathlib import Path
@@ -103,6 +103,12 @@ p["exposure"] = p.owner_2006 * p.space_2006 * np.exp(p.log_p_local) / 1e6  # rub
 p["log_p_region"] = np.log(p.price_rub_m2)                       # ANALYSIS_PLAN.md D13
 p["treat_region"] = p.owner_2006 * p.log_p_region
 p["exposure_region"] = p.owner_2006 * p.space_2006 * p.price_rub_m2 / 1e6
+# ANALYSIS_PLAN.md D16: leave-one-out PSU-year mean of log(1 + personal income), interacted with owner
+p["log_inc"] = np.log1p(p.j60.clip(lower=0))
+g = p.groupby(["psu", "year"]).log_inc
+p["local_inc"] = (g.transform("sum") - p.log_inc.fillna(0)) / (g.transform("count") - p.log_inc.notna())
+p["owner_x_local_inc"] = p.owner_2006 * p.local_inc
+summarize_var(log, p, "local_inc", lower=0)
 p["log_value_m2_own"] = np.where((p.c1 == 1) & (p.c1_1 > 0) & (p.c6 > 0), np.log(p.c1_1 / p.c6), np.nan)
 p["age_bin"] = pd.cut(p.age, [17, 30, 45, 60, 120], labels=["18-30", "31-45", "46-60", "61+"]).astype(str)
 p["female"] = (p.h5 == 2).astype(float)
@@ -112,7 +118,7 @@ check(not p.duplicated(["idind", "year"]).any(), "idind x year not unique")
 log.info("panel", persons=int(p.idind.nunique()), rounds_per_person=p.groupby("idind").size().value_counts().to_dict(),
          owners_2006_share=round(float(p.drop_duplicates("idind").owner_2006.mean()), 3))
 keep = ["idind", "year", "psu", "okato11", "owner_2006", "space_2006", "log_p_local", "treat", "exposure",
-        "log_p_region", "treat_region", "exposure_region", "log_value_m2_own",
+        "log_p_region", "treat_region", "exposure_region", "local_inc", "owner_x_local_inc", "log_value_m2_own",
         "idx_trust_state", "idx_democracy", "trust_government", "age", "age_bin", "female", "diplom"]
 write_table(log, p[keep], str(OUT / "housing_wealth.csv"), sort_by=["idind", "year"])
 log.info("end")
