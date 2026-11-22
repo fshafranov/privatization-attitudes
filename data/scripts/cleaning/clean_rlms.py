@@ -29,7 +29,7 @@ OUT = Path("data/clean/rlms")
 IND_COLS = (
     ["id_w", "idind", "id_h", "year", "int_y", "region", "psu", "status", "h5", "age", "marst",
      "diplom", "j60", "j1", "j23", "j26", "j28",
-     "j223", "j224", "j226", "j69_5", "j69_7", "j107", "j110"]
+     "j223", "j224", "j226", "j69_5", "j69_7", "j107", "j110", "j65", "j66", "j66_1", "j206"]
     + [f"j210_{i}" for i in range(1, 5)]
     + [f"j211_0{i}" for i in range(1, 8)]
     + [f"j209_{i}" for i in range(1, 6)]
