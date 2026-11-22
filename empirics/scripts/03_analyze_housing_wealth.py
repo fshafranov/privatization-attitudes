@@ -96,6 +96,7 @@ run("log_value_m2_own ~ log_p_region | idind + year", fs, "fs_region", "first_st
 panel = df[df.groupby("idind").year.transform("size") >= 2].copy()
 panel["psu_year"] = panel.psu.astype(int) * 10000 + panel.year      # explicit interactions: the bootstrap
 panel["age_year"] = panel.age_bin + "_" + panel.year.astype(str)  # cannot parse a^b fixed-effect syntax
+panel["owner_year"] = panel.owner_2006.astype(int).astype(str) + "_" + panel.year.astype(str)  # D19
 log.info("panel_sample", rows=len(panel), persons=int(panel.idind.nunique()),
          owners=int(panel.drop_duplicates("idind").owner_2006.sum()))
 for outcome in ["idx_trust_state", "idx_democracy", "trust_government"]:
@@ -122,6 +123,14 @@ for outcome in ["idx_trust_state", "idx_democracy", "trust_government"]:
     # r6: r3 + owner x local income (D16): separates housing prices from a general regional boom
     run(f"{outcome} ~ treat_region + owner_x_local_inc | idind + psu_year + age_year", d, "r6",
         "reduced_form_region_income", outcome, "treat_region", "okato11")
+    # r7/s7: + owner-by-year FE (D19): removes the general owner/non-owner trend that owner x log price
+    # otherwise picks up because prices rose almost everywhere; only cross-regional price differences remain
+    run(f"{outcome} ~ treat | idind + psu_year + age_year + owner_year", d, "s7", "reduced_form_owner_trend",
+        outcome, "treat")
+    run(f"{outcome} ~ treat_region | idind + psu_year + age_year + owner_year", d, "r7", "reduced_form_owner_trend",
+        outcome, "treat_region", "okato11")
+    run(f"{outcome} ~ treat_region + owner_x_local_inc | idind + psu_year + age_year + owner_year", d, "r8",
+        "reduced_form_owner_trend_income", outcome, "treat_region", "okato11")
 
 out = pd.concat(results, ignore_index=True)
 out = out[out.term.isin(["log_p_local", "treat", "exposure", "log_p_region", "treat_region", "exposure_region"])]

@@ -1,3 +1,3 @@
 outcome,test,df,statistic,distribution,p_value
-econ_sat,pre-2007 coefficients jointly zero,4,6.32738900829645,chi2,0.17599640293088237
-life_sat,pre-2007 coefficients jointly zero,4,7.237160827172385,chi2,0.1238736696931864
+econ_sat,pre-2007 coefficients jointly zero,4,2.557975155091107,chi2,0.634285393640836
+life_sat,pre-2007 coefficients jointly zero,4,4.422602995409172,chi2,0.35182366108399765

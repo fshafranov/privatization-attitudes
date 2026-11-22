@@ -106,11 +106,11 @@ plotted += [{"figure": "fig6", "series": "bin", "x": round(float(x), 4), "y": ro
 
 # == FIGURE 7: REDUCED FORM ACROSS SPECIFICATIONS AND PRICE INDICES =========
 SPECS = [("Person + unit-by-year FE", "s2", "r2"), ("+ age-group-by-year FE", "s3", "r3"),
-         ("+ age FE, without Moscow / St Petersburg", "s5", "r5")]
+         ("+ age FE, without Moscow / St Petersburg", "s5", "r5"), ("+ owner-by-year FE (preferred, D19)", "s7", "r7")]
 INDICES = [("Survey-based local index (38 units)", "treat", 0, BLUE, -0.14),
            ("Rosstat regional prices (32 regions)", "treat_region", 1, ORANGE, 0.14)]
 OUTS = [("idx_trust_state", "Trust in state institutions"), ("idx_democracy", "Democratic values")]
-fig, axes = plt.subplots(1, 2, figsize=(9.5, 3.8), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(9.5, 4.6), sharey=True)
 for ax, (outcome, title) in zip(axes, OUTS):
     for k, (lbl, s_int, s_reg) in enumerate(SPECS):
         for name, term, j, col, off in INDICES:
@@ -126,7 +126,7 @@ for ax, (outcome, title) in zip(axes, OUTS):
             plotted.append({"figure": "fig7", "series": f"{outcome}|{(s_int, s_reg)[j]}", "x": k,
                             "y": round(float(row.estimate), 4)})
     ax.axvline(0, color=AXIS, lw=1, zorder=0)
-    ax.set_xlim(-0.3, 0.3)
+    ax.set_xlim(-0.55, 0.4)
     ax.grid(axis="x", color=GRID, lw=0.6)
     ax.set_title(title, loc="left", fontsize=10)
     ax.set_xlabel("SD change per log point of price")
@@ -135,7 +135,7 @@ axes[0].set_yticks(range(len(SPECS)), [lbl for lbl, _, _ in SPECS])
 axes[0].invert_yaxis()
 handles = [matplotlib.lines.Line2D([], [], color=c, marker="o", lw=2, label=n) for n, _, _, c, _ in INDICES]
 fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.01, 0.93), ncol=2, frameon=False, fontsize=8)
-fig.suptitle("As prices rise, 2006 owners trust the state a little more; not robust to age-by-year controls",
+fig.suptitle("Once owners' general trend is removed (bottom row), no positive effect of prices remains",
              x=0.01, ha="left", fontsize=11, fontweight="bold")
 fig.text(0.01, -0.06, "Coefficient on owner-in-2006 × log price, relative to non-owners in the same sampling unit and "
          "year; 95% CIs; p = wild cluster bootstrap (units or regions). RLMS 2006, 2012, 2017, 2018.",

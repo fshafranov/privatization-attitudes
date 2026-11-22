@@ -60,6 +60,21 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 - estimation warning: reduced_form_region_income r6: 132 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form_region_income r6: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend s7: The inplace keyword in DataFrame.reset_index is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend s7: 132 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend s7: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend r7: The inplace keyword in DataFrame.reset_index is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend r7: 132 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend r7: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend_income r8: The inplace keyword in DataFrame.reset_index is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+- estimation warning: reduced_form_owner_trend_income r8: 132 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend_income r8: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
 - estimation warning: reduced_form s1: 104 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form s2: 104 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form s3: 104 singleton fixed effect(s) dropped from the model.
@@ -70,6 +85,9 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 - estimation warning: reduced_form_region r4: 96 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form_region_no_capitals r5: 97 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form_region_income r6: 104 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend s7: 104 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend r7: 104 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend_income r8: 104 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form s1: 150 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form s2: 150 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form s3: 150 singleton fixed effect(s) dropped from the model.
@@ -80,3 +98,6 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 - estimation warning: reduced_form_region r4: 141 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form_region_no_capitals r5: 128 singleton fixed effect(s) dropped from the model.
 - estimation warning: reduced_form_region_income r6: 150 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend s7: 150 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend r7: 150 singleton fixed effect(s) dropped from the model.
+- estimation warning: reduced_form_owner_trend_income r8: 150 singleton fixed effect(s) dropped from the model.
