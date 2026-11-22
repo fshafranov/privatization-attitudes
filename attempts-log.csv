@@ -7,3 +7,5 @@ timestamp,actor,what,command,outcome,details,git_commit
 2026-11-22 23:53:19,run_all,pipeline run,run_all.py --stage processing,success,2 steps,no-git
 2026-11-22 23:53:30,run_all,pipeline run,run_all.py --stage empirics,success,4 steps,no-git
 2026-11-23 00:13:20,run_all,pipeline run,run_all.py ,success,8 steps,no-git
+2026-11-23 00:21:30,run_all,pipeline run,run_all.py ,success,10 steps,604111f-dirty
+2026-11-23 00:22:05,claude,annual event study around 2008-09 bust + income control,,success,pre-trends insignificant but noisy; pooled post null; annual econ_sat association removed by owner x local income,604111f-dirty

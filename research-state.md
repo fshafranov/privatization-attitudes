@@ -7,7 +7,7 @@ delete earlier entries). Code, results files and the registers are the source of
 if this file contradicts them, trust them and flag the contradiction. -->
 
 ## Current state
-Last updated: 2026-11-22
+Last updated: 2026-11-23
 
 - **Done:** pipeline runs end to end (`uv run python run_all.py`): clean_rlms → process_longrun_2006
   (2006 cross-section, 11,607 adults, plus four attitude indices, D7) → 01_analyze_longrun_2006
@@ -43,7 +43,7 @@ Last updated: 2026-11-22
   2012-2018 mean 0.089, SD 0.125. First stage: owners' own value per m2 moves 0.974 (SE 0.096)
   with the leave-out index. Reduced form (owner x log local price): person + PSU-by-year FE, trust
   index +0.069 SD (SE 0.029, wild p 0.017), democracy -0.067 (SE 0.039, wild p 0.108); adding
-  age-bin-by-year FE, trust 0.035 (wild p 0.204), democracy -0.062 (wild p 0.139). Exposure
+  age-bin-by-year FE, trust 0.035 (wild p 0.206), democracy -0.062 (wild p 0.140). Exposure
   version null. Direction "more to lose -> loyal", small, not robust to life-cycle controls. The
   internal index had unit errors (fixed by a PSU-round 5x median trim); Rosstat prices would remove
   that risk.
@@ -55,8 +55,16 @@ Last updated: 2026-11-22
   (wild p 0.026) with person + unit-by-year FE; +0.033 (wild p 0.392) with age-by-year FE;
   democracy index -0.075 (p 0.296) and -0.067 (p 0.340). Same signs and sizes as the survey
   index, less precise.
-- **Bottom line:** owners lean toward more trust and less weight on democratic rights as prices
-  rise, consistently across both price indices, but nothing survives age-by-year controls.
+- **Event study and income control (D14-D16, `05_analyze_event_study.py`, fig8):** around the
+  2008-09 regional price bust there is no clear break for owners. Pre-2007 coefficients are
+  jointly insignificant (economic satisfaction p 0.176, life satisfaction p 0.124) but noisy;
+  pooled post-bust estimates are 0.179 (wild p 0.285) and -0.118 (wild p 0.566). In the annual
+  design, owners' economic satisfaction falls slightly as regional prices rise (-0.072, wild p
+  0.037), but adding owner x local income removes it (0.003, wild p 0.968). Political four-round
+  design with the income control (r6): trust index 0.104 (wild p 0.429), democracy -0.068 (wild p 0.532).
+- **Bottom line:** no robust evidence that housing-wealth changes moved owners' attitudes or
+  satisfaction. Where an association appears it is explained by regional income growth, the
+  confound the design was worried about. The housing route does not deliver a causal finding.
 - **Next step:** user decision: park, or chase the housing hint with a design that has outside
   variation in privatization timing (none found in RLMS so far).
 
@@ -149,3 +157,14 @@ Last updated: 2026-11-22
 - Failed: rosstat.gov.ru unreachable (certificate); statbase pages for 2002 and 2004 have no table.
 - Key decisions: D13.
 - Commit: no-git
+
+### 2026-11-23 (b)
+- Done: git initialized (5 commits on main); on branch feature/annual-event-study added annual
+  outcomes to cleaning, `process_annual_panel.py`, `05_analyze_event_study.py`, the owner x local
+  income control in the political design (r6), fig8; renamed the figure script 04 -> 06.
+- Succeeded: pre-trend tests run; the bootstrap now works with several regressors and string clusters.
+- Failed: pyfixest Wald test returns an object, not a dict (fixed); bootstrap failed on string
+  cluster codes (fixed with integer codes); bootstrap p-values in s3 moved in the third decimal
+  after the cluster-code change.
+- Key decisions: D14-D16.
+- Commit: see git log on feature/annual-event-study
