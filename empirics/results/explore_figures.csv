@@ -1,0 +1,73 @@
+figure,group,series,x,value,n
+fig2,All adults,Don't know,,0.131,11607
+fig2,All adults,Leave with owners,,0.1698,11607
+fig2,All adults,"Leave, owners pay extra",,0.1267,11607
+fig2,All adults,Re-privatize another way,,0.1102,11607
+fig2,All adults,Return to the state,,0.4622,11607
+fig2,"Asked, did not run one (age 35+)",Don't know,,0.1201,7051
+fig2,"Asked, did not run one (age 35+)",Leave with owners,,0.116,7051
+fig2,"Asked, did not run one (age 35+)","Leave, owners pay extra",,0.1133,7051
+fig2,"Asked, did not run one (age 35+)",Re-privatize another way,,0.1099,7051
+fig2,"Asked, did not run one (age 35+)",Return to the state,,0.5406,7051
+fig2,Household never privatized,Don't know,,0.1289,1482
+fig2,Household never privatized,Leave with owners,,0.168,1482
+fig2,Household never privatized,"Leave, owners pay extra",,0.1329,1482
+fig2,Household never privatized,Re-privatize another way,,0.1181,1482
+fig2,Household never privatized,Return to the state,,0.4521,1482
+fig2,Household privatized flat 1995–2002,Don't know,,0.1607,759
+fig2,Household privatized flat 1995–2002,Leave with owners,,0.1528,759
+fig2,Household privatized flat 1995–2002,"Leave, owners pay extra",,0.1225,759
+fig2,Household privatized flat 1995–2002,Re-privatize another way,,0.1014,759
+fig2,Household privatized flat 1995–2002,Return to the state,,0.4625,759
+fig2,"Owned shares 1994–96, kept them",Don't know,,0.0957,397
+fig2,"Owned shares 1994–96, kept them",Leave with owners,,0.136,397
+fig2,"Owned shares 1994–96, kept them","Leave, owners pay extra",,0.1159,397
+fig2,"Owned shares 1994–96, kept them",Re-privatize another way,,0.136,397
+fig2,"Owned shares 1994–96, kept them",Return to the state,,0.5164,397
+fig2,"Owned shares 1994–96, lost them",Don't know,,0.1633,343
+fig2,"Owned shares 1994–96, lost them",Leave with owners,,0.1079,343
+fig2,"Owned shares 1994–96, lost them","Leave, owners pay extra",,0.1137,343
+fig2,"Owned shares 1994–96, lost them",Re-privatize another way,,0.1166,343
+fig2,"Owned shares 1994–96, lost them",Return to the state,,0.4985,343
+fig2,Ran a cooperative in the 1980s,Don't know,,0.04,200
+fig2,Ran a cooperative in the 1980s,Leave with owners,,0.135,200
+fig2,Ran a cooperative in the 1980s,"Leave, owners pay extra",,0.13,200
+fig2,Ran a cooperative in the 1980s,Re-privatize another way,,0.16,200
+fig2,Ran a cooperative in the 1980s,Return to the state,,0.535,200
+fig3,,employed who co-own their employer,1994,0.2381,
+fig3,,employed who co-own their employer,1995,0.2106,
+fig3,,employed who co-own their employer,1996,0.1919,
+fig3,,employed who co-own their employer,1998,0.1395,
+fig3,,employed who co-own their employer,2000,0.1131,
+fig3,,employed who co-own their employer,2001,0.1012,
+fig3,,employed who co-own their employer,2002,0.0814,
+fig3,,employed who co-own their employer,2003,0.0654,
+fig3,,employed who co-own their employer,2004,0.0584,
+fig3,,employed who co-own their employer,2005,0.0465,
+fig3,,employed who co-own their employer,2006,0.0358,
+fig3,,employed who co-own their employer,2007,0.0292,
+fig3,,employed who co-own their employer,2008,0.0266,
+fig3,,employed who co-own their employer,2009,0.0239,
+fig3,,employed who co-own their employer,2010,0.0281,
+fig3,,employed who co-own their employer,2011,0.0253,
+fig3,,employed who co-own their employer,2012,0.0233,
+fig3,,employed who co-own their employer,2013,0.0239,
+fig3,,employed who co-own their employer,2014,0.0244,
+fig3,,employed who co-own their employer,2015,0.0241,
+fig3,,employed who co-own their employer,2016,0.0266,
+fig3,,employed who co-own their employer,2017,0.0266,
+fig3,,employed who co-own their employer,2018,0.0265,
+fig3,,employed who co-own their employer,2019,0.0275,
+fig3,,employed who co-own their employer,2020,0.0257,
+fig3,,employed who co-own their employer,2021,0.0272,
+fig3,,employed who co-own their employer,2022,0.0267,
+fig3,,employed who co-own their employer,2023,0.0313,
+fig3,,employed who co-own their employer,2024,0.0182,
+fig3,,employed who co-own their employer,2025,0.019,
+fig3,,households in privatized flats,1994,0.5504,
+fig3,,households in privatized flats,1995,0.5855,
+fig3,,households in privatized flats,1996,0.6088,
+fig3,,households in privatized flats,1998,0.6566,
+fig3,,households in privatized flats,2000,0.6873,
+fig3,,households in privatized flats,2001,0.6831,
+fig3,,households in privatized flats,2002,0.7066,

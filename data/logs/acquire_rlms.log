@@ -1,0 +1,4 @@
+2026-11-22 22:10:19 [info     ] start                            script=acquire_rlms
+2026-11-22 22:10:19 [info     ] verified                         bytes=89200601 file=data/raw/rlms/RLMS_HH_1994_2025_eng_DTA.zip member=RLMS_HH_1994_2025_eng.dta script=acquire_rlms
+2026-11-22 22:10:19 [info     ] verified                         bytes=99247569 file=data/raw/rlms/RLMS_IND_1994_2025_eng_DTA.7z member=RLMS_IND_1994_2025_eng.dta script=acquire_rlms
+2026-11-22 22:10:19 [info     ] end                              script=acquire_rlms
