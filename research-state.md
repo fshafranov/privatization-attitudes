@@ -1,0 +1,151 @@
+# Research state: Mass privatization and political attitudes in Russia (RLMS)
+
+<!-- Protocol. Start of a session: read "Current state" and the last three entries of
+"Session history" only. Before stopping for any reason: rewrite "Current state" (present
+only, never appended to) and append one dated entry to "Session history" (never edit or
+delete earlier entries). Code, results files and the registers are the source of truth:
+if this file contradicts them, trust them and flag the contradiction. -->
+
+## Current state
+Last updated: 2026-11-22
+
+- **Done:** pipeline runs end to end (`uv run python run_all.py`): clean_rlms → process_longrun_2006
+  (2006 cross-section, 11,607 adults, plus four attitude indices, D7) → 01_analyze_longrun_2006
+  (s1–s3, BH q-values, D8) → 02_explore_figures (fig1–fig4). Screening is in `screening/`.
+- **Single items:** no 1990s history moves support for revising privatization (s3: lost shares
+  0.011, SE 0.037; became privatized 0.002, SE 0.025). Lost shares → more "don't know" (0.06, SE 0.024).
+- **Indices (SD units, s3):** nothing survives correction (smallest BH q = 0.267, no Holm
+  rejections). Nominal hits: became privatized → democratic values +0.138 (SE 0.063); 1980s
+  cooperant → state approval −0.229 (SE 0.093) and democratic values −0.261 (SE 0.123); flat
+  privatized at first observation → market legitimacy +0.076 (SE 0.039). All eight housing
+  coefficients are positive. Without controls, homeowners trust the state much more (+0.286, SE
+  0.074, privatized at first observation), but region FE and controls remove most of that, so the
+  raw "loyalty" pattern is mostly who lives where.
+- **Interpretation:** at most a weak hint that owning one's flat goes with slightly more
+  democratic and market-friendly views, not with more loyalty. Not causal; housing paths are
+  self-selected and the region FE absorb a lot.
+- **Figures:** `empirics/results/figures/fig1_coefficients.png`, `fig2_answer_mix.png`,
+  `fig3_histories.png`, `fig4_indices.png`; `screening/results/fig_item_coverage.png`.
+- **Data structure (checked 2026-11-22):** people link across all rounds by `idind`. Household
+  `id_h` persists between consecutive rounds for about 97% of people, but is renumbered in 1995,
+  2006, 2009 and 2010, so household histories should be built through people, not `id_h`. The
+  2006 workfile already does this. The screening transition counts now drop the 1994->1995 pairs.
+  `c1` "own residence" (about 90% every year) counts occupied state flats too; legal ownership
+  is `c2` (1994-2002) or `c4`/`c4_0`.
+- **Candidate housing design:** home value (`c1_1`, 2000-2025) and mortgages (`f14_71`, 2006-2025)
+  against trust and democratic values (`j207_x`, `j208_x`), asked in 2006, 2012, 2017 and 2018.
+  Panel support: 16,532 people answer trust in government in at least two of those rounds, and
+  10,478 owners report a home value in at least two. Outside variation would have to come from
+  regional house prices (Ansell 2014-style). Not built yet.
+- **Housing-wealth trial (D9-D12, `03_analyze_housing_wealth.py`, figures fig5-fig7):** 6,985
+  adults in at least two of 2006/2012/2017/2018, 5,354 of them owners in 2006. After the D10
+  unit-error trim, PSU log price change 2006-2012 has mean 0.810 and SD 0.293 across the 38 PSUs;
+  2012-2018 mean 0.089, SD 0.125. First stage: owners' own value per m2 moves 0.974 (SE 0.096)
+  with the leave-out index. Reduced form (owner x log local price): person + PSU-by-year FE, trust
+  index +0.069 SD (SE 0.029, wild p 0.017), democracy -0.067 (SE 0.039, wild p 0.108); adding
+  age-bin-by-year FE, trust 0.035 (wild p 0.204), democracy -0.062 (wild p 0.139). Exposure
+  version null. Direction "more to lose -> loyal", small, not robust to life-cycle controls. The
+  internal index had unit errors (fixed by a PSU-round 5x median trim); Rosstat prices would remove
+  that risk.
+- **External prices (D13, 2026-11-23):** Rosstat regional Q4 secondary-market prices per m2,
+  2001-2025, from statbase.ru year pages (collected at the user's request), validated exactly
+  against Rosstat's own 2021 file for all 84 regions. Across the 32 RLMS regions the 2006-2012 log
+  price change has mean 0.541 and SD 0.183. First stage on regional prices 0.531 (SE 0.284, wild
+  p 0.107). Reduced form (owner x log regional price, clustered by region): trust index +0.090
+  (wild p 0.026) with person + unit-by-year FE; +0.033 (wild p 0.392) with age-by-year FE;
+  democracy index -0.075 (p 0.296) and -0.067 (p 0.340). Same signs and sizes as the survey
+  index, less precise.
+- **Bottom line:** owners lean toward more trust and less weight on democratic rights as prices
+  rise, consistently across both price indices, but nothing survives age-by-year controls.
+- **Next step:** user decision: park, or chase the housing hint with a design that has outside
+  variation in privatization timing (none found in RLMS so far).
+
+## Session history
+
+### 2026-11-22
+- Done: scaffolded the package; read the RLMS household and individual codebooks (2023 English
+  versions) and the Gerber–Zavisca 2018 memo; searched OpenAlex for prior work.
+- Succeeded: identified the candidate variables and the closest prior papers (Huber & Montag 2020;
+  Earle & Gehlbach; Gerber & Zavisca 2018).
+- Failed: could not read the round-14 questionnaire's round coverage; the codebooks do not list
+  rounds per variable.
+- Key decisions: none yet (no D# entries).
+- Commit: no-git
+
+### 2026-11-22 (b)
+- Done: screened the RLMS household file (2,212 variables, 178,343 household-rounds).
+- Succeeded: found the retrospective acquisition items `c21`/`c22` (2025 only).
+- Failed: `c2` stops after 2002; the individual file is missing, so the political-item check is not run.
+- Key decisions: screening kept outside the pipeline in `screening/` (pre-pipeline, not in run_all.py).
+- Commit: no-git
+
+### 2026-11-22 (c)
+- Done: streamed 71 columns of the individual file (474,600 person-rounds); tabulated item coverage
+  by round, share-ownership flows, and within-person overlap with housing switchers.
+- Succeeded: decisive check completed; found the 2006 privatization-attitude items (`j223`, `j210_x`).
+- Failed: first background stream died at start for an unlogged reason; the rerun succeeded.
+- Key decisions: none (no D# entries); screening stays outside the pipeline.
+- Commit: no-git
+
+### 2026-11-22 (d)
+- Done: built the pipeline (acquire = documented copy check; clean_rlms; process_longrun_2006;
+  01_analyze_longrun_2006), D1–D6 in ANALYSIS_PLAN.md, raw checksum manifest; unused scaffold
+  templates moved to archive/templates/.
+- Succeeded: full run from raw; all history coefficients on `revise` are near zero.
+- Failed: nothing; pyfixest emits pandas deprecation warnings and one multicollinearity drop in s3
+  (logged in empirics/results/warnings/).
+- Key decisions: D1–D6.
+- Commit: no-git
+
+### 2026-11-22 (e)
+- Done: added `02_explore_figures.py` (coefficient plot, answer mix by history, trends) to run_all.py
+  and a screening coverage figure; palette checked with the dataviz validator.
+- Succeeded: all four figures render and were checked visually.
+- Failed: nothing.
+- Key decisions: none.
+- Commit: no-git
+
+### 2026-11-22 (f)
+- Done: added 2006 module items to cleaning; built four KLK indices (D7); BH/Holm correction (D8);
+  fig4_indices.png.
+- Succeeded: indices are coherent except market legitimacy (alphas in the processing log).
+- Failed: no index estimate survives multiple-testing correction.
+- Key decisions: D7, D8 (not pre-specified).
+- Commit: no-git
+
+### 2026-11-22 (g)
+- Done: checked household ID persistence across rounds; mapped housing variables by round; fixed
+  screening transitions (dropped renumbered 1995 pairs); counted panel support for a
+  home-value x attitudes design.
+- Succeeded: the 2006 workfile is unaffected (links via persons within round).
+- Failed: nothing.
+- Key decisions: none.
+- Commit: no-git
+
+### 2026-11-22 (h)
+- Done: housing-wealth trial run: cleaning extended (housing value, space, tenure); panel built
+  (`process_housing_wealth.py`); first stage and reduced form (`03_analyze_housing_wealth.py`).
+- Succeeded: strong first stage; owners' trust rises and democratic-values index falls with
+  local prices relative to non-owners, but only the trust result with PSU-by-year FE is clearly
+  significant and it halves with age-by-year controls.
+- Failed: Rosstat download (certificate chain); wildboottest with person FE returns NaN t (fixed by FWL).
+- Key decisions: D9-D12.
+- Commit: no-git
+
+### 2026-11-22 (i)
+- Done: housing figures (fig5 local prices, fig6 first stage, fig7 reduced form, `04_explore_housing_figures.py`);
+  found unit errors in self-reported home values in the capitals; added a PSU-round median trim (D10 amendment).
+- Succeeded: after the trim the first stage strengthened and the reduced-form signs held.
+- Failed: the earlier trial numbers (before the trim) are superseded.
+- Key decisions: D10 amended.
+- Commit: no-git
+
+### 2026-11-23
+- Done: collected statbase year pages 2001-2025 and Rosstat's archived 2021 regional file
+  (`acquire_housing_prices.py`); parsed and validated them (`clean_housing_prices.py`); PSU-region
+  crosswalk; external-price specs r2-r5 in `03_analyze_housing_wealth.py`; fig7 shows both indices.
+- Succeeded: exact match with Rosstat 2021 for all 84 regions after mapping the Arkhangelsk and
+  Tyumen sub-rows; results replicate the survey-index pattern.
+- Failed: rosstat.gov.ru unreachable (certificate); statbase pages for 2002 and 2004 have no table.
+- Key decisions: D13.
+- Commit: no-git
