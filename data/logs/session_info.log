@@ -1,6 +1,6 @@
 Python 3.12.13 (.venv/bin/python3)
 Platform macOS-26.2-arm64-arm-64bit
-Commit 604111f-dirty
+Commit 311dc14-dirty
 
 # Python packages (uv pip freeze; pinned in uv.lock)
 annotated-types==0.8.0

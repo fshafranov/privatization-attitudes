@@ -1,22 +1,22 @@
-2026-11-23 00:20:39,980 | INFO    | START run_all.py : 10 steps
-2026-11-23 00:20:40,025 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_rlms.py
-2026-11-23 00:20:52,804 | INFO    | DONE data/scripts/cleaning/clean_rlms.py
-2026-11-23 00:20:52,804 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_housing_prices.py
-2026-11-23 00:20:53,283 | INFO    | DONE data/scripts/cleaning/clean_housing_prices.py
-2026-11-23 00:20:53,283 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_longrun_2006.py
-2026-11-23 00:20:53,993 | INFO    | DONE data/scripts/processing/process_longrun_2006.py
-2026-11-23 00:20:53,994 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_housing_wealth.py
-2026-11-23 00:20:54,802 | INFO    | DONE data/scripts/processing/process_housing_wealth.py
-2026-11-23 00:20:54,802 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_annual_panel.py
-2026-11-23 00:20:56,370 | INFO    | DONE data/scripts/processing/process_annual_panel.py
-2026-11-23 00:20:56,370 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/01_analyze_longrun_2006.py
-2026-11-23 00:20:57,842 | INFO    | DONE empirics/scripts/01_analyze_longrun_2006.py
-2026-11-23 00:20:57,842 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/02_explore_figures.py
-2026-11-23 00:20:58,773 | INFO    | DONE empirics/scripts/02_explore_figures.py
-2026-11-23 00:20:58,774 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/03_analyze_housing_wealth.py
-2026-11-23 00:21:14,664 | INFO    | DONE empirics/scripts/03_analyze_housing_wealth.py
-2026-11-23 00:21:14,664 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/05_analyze_event_study.py
-2026-11-23 00:21:29,624 | INFO    | DONE empirics/scripts/05_analyze_event_study.py
-2026-11-23 00:21:29,625 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/06_explore_housing_figures.py
-2026-11-23 00:21:30,451 | INFO    | DONE empirics/scripts/06_explore_housing_figures.py
-2026-11-23 00:21:30,452 | INFO    | END run_all
+2026-11-23 00:22:58,916 | INFO    | START run_all.py : 10 steps
+2026-11-23 00:22:58,961 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_rlms.py
+2026-11-23 00:23:12,204 | INFO    | DONE data/scripts/cleaning/clean_rlms.py
+2026-11-23 00:23:12,204 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_housing_prices.py
+2026-11-23 00:23:12,697 | INFO    | DONE data/scripts/cleaning/clean_housing_prices.py
+2026-11-23 00:23:12,697 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_longrun_2006.py
+2026-11-23 00:23:13,448 | INFO    | DONE data/scripts/processing/process_longrun_2006.py
+2026-11-23 00:23:13,448 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_housing_wealth.py
+2026-11-23 00:23:14,284 | INFO    | DONE data/scripts/processing/process_housing_wealth.py
+2026-11-23 00:23:14,284 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_annual_panel.py
+2026-11-23 00:23:15,920 | INFO    | DONE data/scripts/processing/process_annual_panel.py
+2026-11-23 00:23:15,920 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/01_analyze_longrun_2006.py
+2026-11-23 00:23:17,449 | INFO    | DONE empirics/scripts/01_analyze_longrun_2006.py
+2026-11-23 00:23:17,449 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/02_explore_figures.py
+2026-11-23 00:23:18,448 | INFO    | DONE empirics/scripts/02_explore_figures.py
+2026-11-23 00:23:18,448 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/03_analyze_housing_wealth.py
+2026-11-23 00:23:34,674 | INFO    | DONE empirics/scripts/03_analyze_housing_wealth.py
+2026-11-23 00:23:34,675 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/05_analyze_event_study.py
+2026-11-23 00:23:49,999 | INFO    | DONE empirics/scripts/05_analyze_event_study.py
+2026-11-23 00:23:49,999 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/06_explore_housing_figures.py
+2026-11-23 00:23:50,795 | INFO    | DONE empirics/scripts/06_explore_housing_figures.py
+2026-11-23 00:23:50,795 | INFO    | END run_all

@@ -1,4 +1,4 @@
-2026-11-22 23:21:14 [info     ] start                            script=analyze_event_study
-2026-11-22 23:21:29 [info     ] wrote                            cols=16 file=empirics/results/analyze_event_study.csv rows=31 script=analyze_event_study
-2026-11-22 23:21:29 [info     ] wrote                            cols=6 file=empirics/results/analyze_event_study_pretrends.csv rows=2 script=analyze_event_study
-2026-11-22 23:21:29 [info     ] end                              script=analyze_event_study
+2026-11-22 23:23:34 [info     ] start                            script=analyze_event_study
+2026-11-22 23:23:49 [info     ] wrote                            cols=16 file=empirics/results/analyze_event_study.csv rows=31 script=analyze_event_study
+2026-11-22 23:23:49 [info     ] wrote                            cols=6 file=empirics/results/analyze_event_study_pretrends.csv rows=2 script=analyze_event_study
+2026-11-22 23:23:49 [info     ] end                              script=analyze_event_study
