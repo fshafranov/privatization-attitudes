@@ -1,0 +1,29 @@
+2026-11-22 23:05:38 [info     ] start                            script=acquire_housing_prices
+2026-11-22 23:05:39 [info     ] downloaded                       bytes=48904 file=data/raw/rosstat_housing/sred_vtor_2021.xlsx script=acquire_housing_prices
+2026-11-22 23:05:42 [info     ] downloaded                       bytes=529535 file=data/raw/statbase_housing/secondary_2001.html script=acquire_housing_prices
+2026-11-22 23:05:50 [info     ] downloaded                       bytes=145202 file=data/raw/statbase_housing/secondary_2002.html script=acquire_housing_prices
+2026-11-22 23:05:58 [info     ] downloaded                       bytes=534063 file=data/raw/statbase_housing/secondary_2003.html script=acquire_housing_prices
+2026-11-22 23:06:07 [info     ] downloaded                       bytes=145202 file=data/raw/statbase_housing/secondary_2004.html script=acquire_housing_prices
+2026-11-22 23:06:15 [info     ] downloaded                       bytes=538751 file=data/raw/statbase_housing/secondary_2005.html script=acquire_housing_prices
+2026-11-22 23:06:22 [info     ] downloaded                       bytes=537223 file=data/raw/statbase_housing/secondary_2006.html script=acquire_housing_prices
+2026-11-22 23:06:30 [info     ] downloaded                       bytes=547439 file=data/raw/statbase_housing/secondary_2007.html script=acquire_housing_prices
+2026-11-22 23:06:39 [info     ] downloaded                       bytes=543047 file=data/raw/statbase_housing/secondary_2008.html script=acquire_housing_prices
+2026-11-22 23:06:47 [info     ] downloaded                       bytes=547439 file=data/raw/statbase_housing/secondary_2009.html script=acquire_housing_prices
+2026-11-22 23:06:56 [info     ] downloaded                       bytes=547439 file=data/raw/statbase_housing/secondary_2010.html script=acquire_housing_prices
+2026-11-22 23:07:04 [info     ] downloaded                       bytes=547439 file=data/raw/statbase_housing/secondary_2011.html script=acquire_housing_prices
+2026-11-22 23:07:11 [info     ] downloaded                       bytes=550078 file=data/raw/statbase_housing/secondary_2012.html script=acquire_housing_prices
+2026-11-22 23:07:19 [info     ] downloaded                       bytes=556111 file=data/raw/statbase_housing/secondary_2013.html script=acquire_housing_prices
+2026-11-22 23:07:28 [info     ] downloaded                       bytes=556111 file=data/raw/statbase_housing/secondary_2014.html script=acquire_housing_prices
+2026-11-22 23:07:37 [info     ] downloaded                       bytes=556111 file=data/raw/statbase_housing/secondary_2015.html script=acquire_housing_prices
+2026-11-22 23:07:45 [info     ] downloaded                       bytes=563593 file=data/raw/statbase_housing/secondary_2016.html script=acquire_housing_prices
+2026-11-22 23:07:54 [info     ] downloaded                       bytes=563593 file=data/raw/statbase_housing/secondary_2017.html script=acquire_housing_prices
+2026-11-22 23:08:03 [info     ] downloaded                       bytes=558748 file=data/raw/statbase_housing/secondary_2018.html script=acquire_housing_prices
+2026-11-22 23:08:11 [info     ] downloaded                       bytes=563603 file=data/raw/statbase_housing/secondary_2019.html script=acquire_housing_prices
+2026-11-22 23:08:20 [info     ] downloaded                       bytes=559327 file=data/raw/statbase_housing/secondary_2020.html script=acquire_housing_prices
+2026-11-22 23:08:29 [info     ] downloaded                       bytes=563613 file=data/raw/statbase_housing/secondary_2021.html script=acquire_housing_prices
+2026-11-22 23:08:37 [info     ] downloaded                       bytes=563668 file=data/raw/statbase_housing/secondary_2022.html script=acquire_housing_prices
+2026-11-22 23:08:46 [info     ] downloaded                       bytes=563713 file=data/raw/statbase_housing/secondary_2023.html script=acquire_housing_prices
+2026-11-22 23:08:54 [info     ] downloaded                       bytes=563763 file=data/raw/statbase_housing/secondary_2024.html script=acquire_housing_prices
+2026-11-22 23:09:01 [info     ] downloaded                       bytes=561879 file=data/raw/statbase_housing/secondary_2025.html script=acquire_housing_prices
+2026-11-22 23:09:07 [info     ] verified                         bytes=48904 file=data/raw/rosstat_housing/sred_vtor_2021.xlsx format=xlsx script=acquire_housing_prices
+2026-11-22 23:09:07 [info     ] verified                         file=secondary_2001.html region_rows=77 script=acquire_housing_prices

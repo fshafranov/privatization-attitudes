@@ -1,0 +1,36 @@
+2026-11-22 23:13:00 [info     ] start                            script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2001.html rows=77 script=clean_housing_prices selected_year=['2001']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2002.html rows=0 script=clean_housing_prices selected_year=['2001']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2003.html rows=78 script=clean_housing_prices selected_year=['2003']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2004.html rows=0 script=clean_housing_prices selected_year=['2001']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2005.html rows=79 script=clean_housing_prices selected_year=['2005']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2006.html rows=78 script=clean_housing_prices selected_year=['2006']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2007.html rows=81 script=clean_housing_prices selected_year=['2007']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2008.html rows=80 script=clean_housing_prices selected_year=['2008']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2009.html rows=81 script=clean_housing_prices selected_year=['2009']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2010.html rows=81 script=clean_housing_prices selected_year=['2010']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2011.html rows=81 script=clean_housing_prices selected_year=['2011']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2012.html rows=81 script=clean_housing_prices selected_year=['2012']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2013.html rows=83 script=clean_housing_prices selected_year=['2013']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2014.html rows=83 script=clean_housing_prices selected_year=['2014']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2015.html rows=83 script=clean_housing_prices selected_year=['2015']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2016.html rows=85 script=clean_housing_prices selected_year=['2016']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2017.html rows=85 script=clean_housing_prices selected_year=['2017']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2018.html rows=84 script=clean_housing_prices selected_year=['2018']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2019.html rows=85 script=clean_housing_prices selected_year=['2019']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2020.html rows=84 script=clean_housing_prices selected_year=['2020']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2021.html rows=85 script=clean_housing_prices selected_year=['2021']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2022.html rows=85 script=clean_housing_prices selected_year=['2022']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2023.html rows=85 script=clean_housing_prices selected_year=['2023']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2024.html rows=85 script=clean_housing_prices selected_year=['2024']
+2026-11-22 23:13:00 [info     ] page                             file=secondary_2025.html rows=84 script=clean_housing_prices selected_year=['2025']
+2026-11-22 23:13:00 [info     ] shape                            cols=5 data=parsed rows=1893 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] set_aside                        reason='national total, not a region (written to national_prices.csv)' rows=23 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] validation_2021                  exact=84 matched=84 max_abs_diff=0.0 rosstat_rows=86 script=clean_housing_prices statbase=84
+2026-11-22 23:13:00 [info     ] wrote                            cols=10 file=data/clean/housing_prices/validation_2021.csv rows=84 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] shape                            cols=6 data=clean rows=1870 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] coverage                         regions_by_year={2001: 76, 2003: 77, 2005: 78, 2006: 77, 2007: 80, 2008: 79, 2009: 80, 2010: 80, 2011: 80, 2012: 80, 2013: 82, 2014: 82, 2015: 82, 2016: 84, 2017: 84, 2018: 83, 2019: 84, 2020: 83, 2021: 84, 2022: 84, 2023: 84, 2024: 84, 2025: 83} script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] wrote                            cols=6 file=data/clean/housing_prices/secondary_prices.csv rows=1870 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] wrote                            cols=2 file=data/clean/housing_prices/national_prices.csv rows=23 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] wrote                            cols=5 file=data/clean/housing_prices/discrepancies.csv rows=0 script=clean_housing_prices
+2026-11-22 23:13:00 [info     ] end                              script=clean_housing_prices
