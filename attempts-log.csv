@@ -12,3 +12,8 @@ timestamp,actor,what,command,outcome,details,git_commit
 2026-11-23 00:23:50,run_all,pipeline run,run_all.py ,success,10 steps,311dc14-dirty
 2026-11-23 00:36:48,run_all,pipeline run,run_all.py ,success,14 steps,d01dbea-dirty
 2026-11-23 00:37:38,claude,owner x price designs without owner-by-year FE,,failure,permutation test of r3 centred at +0.045 (trust): estimate confounded by owners' general trend; fixed by D19,d01dbea-dirty
+2026-11-23 00:41:47,run_all,pipeline run,run_all.py ,success,14 steps,b710411-dirty
+2026-11-23 00:45:57,run_all,pipeline run,run_all.py ,success,14 steps,b710411-dirty
+2026-11-23 00:49:40,run_all,pipeline run,run_all.py ,success,14 steps,b710411-dirty
+2026-11-23 00:54:04,run_all,pipeline run,run_all.py ,success,14 steps,b710411-dirty
+2026-11-23 00:57:56,run_all,pipeline run,run_all.py ,success,14 steps,b710411-dirty
