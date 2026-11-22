@@ -261,7 +261,11 @@ def write_table(log, df: pd.DataFrame, rel_path: str, sort_by=None,
     if sort_by:
         df = df.sort_values(sort_by, kind="mergesort").reset_index(drop=True)
     if out.suffix == ".csv":
-        df.to_csv(out, index=False)
+        # 12 significant digits: multithreaded estimators differ run to run at ~1e-15, which would
+        # otherwise break byte-level reproducibility (G4) without changing any reported number
+        floats = df.select_dtypes("float").columns
+        df = df.assign(**{c: df[c].round(10) for c in floats})  # absolute noise in small values too
+        df.to_csv(out, index=False, float_format="%.12g")
     elif out.suffix == ".parquet":
         df.to_parquet(out, index=False)
     elif out.suffix == ".dta":

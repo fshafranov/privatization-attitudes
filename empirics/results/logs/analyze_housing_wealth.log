@@ -1,14 +1,14 @@
-2026-11-22 23:33:27 [info     ] start                            script=analyze_housing_wealth
-2026-11-22 23:33:27 [info     ] region_price_changes             corr_with_psu_index=0.799 script=analyze_housing_wealth
-2026-11-22 23:33:27 [info     ] wrote                            cols=5 file=empirics/results/analyze_housing_wealth_prices.csv rows=6 script=analyze_housing_wealth
-2026-11-22 23:33:27 [info     ] price_changes                    corr_changes=0.06 script=analyze_housing_wealth table='\n            change  mean   std    min   max\n       d_2006_2012 0.810 0.293  0.278 1.641\n       d_2012_2018 0.089 0.125 -0.261 0.345\n       d_2006_2018 0.899 0.325  0.223 1.958\nregion_d_2006_2012 0.541 0.183  0.131 0.944\nregion_d_2012_2018 0.066 0.121 -0.142 0.356\nregion_d_2006_2018 0.607 0.193  0.261 1.089'
-2026-11-22 23:33:27 [info     ] first_stage_sample               persons=4126 rows=12684 script=analyze_housing_wealth
-2026-11-22 23:33:29 [info     ] panel_sample                     owners=5354 persons=6985 rows=23286 script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|idx_democracy': N differs across specs: r2=22668, r3=22668, r4=21781" sample=reduced_form_region|idx_democracy script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|idx_trust_state': N differs across specs: r2=22524, r3=22524, r4=21640" sample=reduced_form_region|idx_trust_state script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|trust_government': N differs across specs: r2=22420, r3=22420, r4=21541" sample=reduced_form_region|trust_government script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|idx_democracy': N differs across specs: s1=22668, s2=22668, s3=22668, s4=21781" sample=reduced_form|idx_democracy script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|idx_trust_state': N differs across specs: s1=22524, s2=22524, s3=22524, s4=21640" sample=reduced_form|idx_trust_state script=analyze_housing_wealth
-2026-11-22 23:33:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|trust_government': N differs across specs: s1=22420, s2=22420, s3=22420, s4=21541" sample=reduced_form|trust_government script=analyze_housing_wealth
-2026-11-22 23:33:51 [info     ] wrote                            cols=17 file=empirics/results/analyze_housing_wealth.csv rows=44 script=analyze_housing_wealth
-2026-11-22 23:33:51 [info     ] end                              script=analyze_housing_wealth
+2026-11-22 23:54:24 [info     ] start                            script=analyze_housing_wealth
+2026-11-22 23:54:25 [info     ] region_price_changes             corr_with_psu_index=0.799 script=analyze_housing_wealth
+2026-11-22 23:54:25 [info     ] wrote                            cols=5 file=empirics/results/analyze_housing_wealth_prices.csv rows=6 script=analyze_housing_wealth
+2026-11-22 23:54:25 [info     ] price_changes                    corr_changes=0.06 script=analyze_housing_wealth table='\n            change  mean   std    min   max\n       d_2006_2012 0.810 0.293  0.278 1.641\n       d_2012_2018 0.089 0.125 -0.261 0.345\n       d_2006_2018 0.899 0.325  0.223 1.958\nregion_d_2006_2012 0.541 0.183  0.131 0.944\nregion_d_2012_2018 0.066 0.121 -0.142 0.356\nregion_d_2006_2018 0.607 0.193  0.261 1.089'
+2026-11-22 23:54:25 [info     ] first_stage_sample               persons=4126 rows=12684 script=analyze_housing_wealth
+2026-11-22 23:54:26 [info     ] panel_sample                     owners=5354 persons=6985 rows=23286 script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|idx_democracy': N differs across specs: r2=22668, r3=22668, r4=21781" sample=reduced_form_region|idx_democracy script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|idx_trust_state': N differs across specs: r2=22524, r3=22524, r4=21640" sample=reduced_form_region|idx_trust_state script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form_region|trust_government': N differs across specs: r2=22420, r3=22420, r4=21541" sample=reduced_form_region|trust_government script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|idx_democracy': N differs across specs: s1=22668, s2=22668, s3=22668, s4=21781" sample=reduced_form|idx_democracy script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|idx_trust_state': N differs across specs: s1=22524, s2=22524, s3=22524, s4=21640" sample=reduced_form|idx_trust_state script=analyze_housing_wealth
+2026-11-22 23:54:51 [warning  ] sample_inconsistency             detail="Sample 'reduced_form|trust_government': N differs across specs: s1=22420, s2=22420, s3=22420, s4=21541" sample=reduced_form|trust_government script=analyze_housing_wealth
+2026-11-22 23:54:51 [info     ] wrote                            cols=17 file=empirics/results/analyze_housing_wealth.csv rows=44 script=analyze_housing_wealth
+2026-11-22 23:54:51 [info     ] end                              script=analyze_housing_wealth
