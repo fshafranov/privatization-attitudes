@@ -1,0 +1,8 @@
+2026-11-22 23:34:15 [info     ] start                            script=robust_flexible_controls
+2026-11-22 23:34:15 [info     ] candidate_controls               n=72 script=robust_flexible_controls
+2026-11-22 23:34:21 [info     ] pds_selected                     n=2 outcome=idx_trust_state script=robust_flexible_controls
+2026-11-22 23:34:42 [info     ] pds_selected                     n=27 outcome=idx_democracy script=robust_flexible_controls
+2026-11-22 23:35:03 [info     ] pds_selected                     n=5 outcome=trust_government script=robust_flexible_controls
+2026-11-22 23:35:17 [info     ] wrote                            cols=16 file=empirics/results/robust_flexible_controls.csv rows=12 script=robust_flexible_controls
+2026-11-22 23:35:17 [info     ] wrote                            cols=2 file=empirics/results/robust_flexible_controls_selected.csv rows=34 script=robust_flexible_controls
+2026-11-22 23:35:17 [info     ] end                              script=robust_flexible_controls
