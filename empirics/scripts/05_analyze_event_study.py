@@ -30,7 +30,7 @@ WORKFILE = Path("data/processed/annual_panel/annual_panel.csv")
 EVENT_YEARS = [y for y in range(2003, 2014) if y != 2007]
 ES = [f"es_{y}" for y in EVENT_YEARS]
 PRE = [f"es_{y}" for y in EVENT_YEARS if y < 2007]
-FE = "idind + psu_year + age_year"
+FE = "idind + psu_year + age_year + owner_year"  # owner-by-year FE: ANALYSIS_PLAN.md D19
 CL = "okato11"
 log = get_logger(EXERCISE, log_dir="empirics/results/logs")
 root = project_root()

@@ -35,3 +35,24 @@ def script_name(file: str) -> str:
     """04_analyze_reaction_functions.py -> analyze_reaction_functions (results/log name)."""
     stem = Path(file).stem
     return stem.split("_", 1)[1] if stem[:2].isdigit() else stem
+
+
+def wild_p_fwl(data, outcome, param, others, fes, cluster, reps=9999, seed=SEED):
+    """Wild cluster bootstrap p-value for `param` after partialling out the fixed effects and the
+    other regressors (Frisch-Waugh-Lovell); returns (coef, p). ANALYSIS_PLAN.md D12/D16."""
+    import numpy as np
+    import pandas as pd
+    import pyfixest as pf
+
+    d = data.dropna(subset=[outcome, param] + others)
+    r = demean(d, [outcome, param] + others, fes)
+    if others:
+        b = np.linalg.lstsq(r[others].to_numpy(), r[[outcome, param]].to_numpy(), rcond=None)[0]
+        r[[outcome, param]] = r[[outcome, param]].to_numpy() - r[others].to_numpy() @ b
+    r = r[[outcome, param]].rename(columns={outcome: "ry", param: "rx"})
+    r["cl"] = pd.factorize(d[cluster])[0]
+    fw = pf.feols("ry ~ rx", data=r, vcov={"CRV1": "cl"})
+    wb = fw.wildboottest(param="rx", reps=reps, seed=seed)
+    if not np.isfinite(float(wb["t value"])):
+        raise ValueError("non-finite bootstrap t-statistic")
+    return float(fw.coef()["rx"]), float(wb["Pr(>|t|)"])

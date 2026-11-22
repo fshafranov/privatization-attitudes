@@ -73,13 +73,14 @@ p["owner_x_local_inc"] = p.owner_2006 * p.local_inc
 p["age_bin"] = pd.cut(p.age, [17, 30, 45, 60, 120], labels=["18-30", "31-45", "46-60", "61+"]).astype(str)
 p["psu_year"] = p.psu.astype(int) * 10000 + p.year
 p["age_year"] = p.age_bin + "_" + p.year.astype(str)
+p["owner_year"] = p.owner_2006.astype(int).astype(str) + "_" + p.year.astype(int).astype(str)  # D19
 for v, lo, hi in [("life_sat", 1, 5), ("econ_sat", 1, 5), ("trust_people", 0, 1), ("bust_0809", -1, 1),
                   ("local_inc", 0, None), ("owner_2006", 0, 1)]:
     summarize_var(log, p, v, lower=lo, upper=hi)
 check(not p.duplicated(["idind", "year"]).any(), "idind x year not unique")
 log.info("panel", persons=int(p.idind.nunique()), years=sorted(p.year.unique().tolist()),
          owners_2006_share=round(float(p.drop_duplicates("idind").owner_2006.mean()), 3))
-keep = (["idind", "year", "psu", "okato11", "owner_2006", "age", "age_bin", "psu_year", "age_year",
+keep = (["idind", "year", "psu", "okato11", "owner_2006", "age", "age_bin", "psu_year", "age_year", "owner_year",
          "life_sat", "econ_sat", "trust_people", "log_p_region", "treat_region", "bust_0809", "post_bust",
          "local_inc", "owner_x_local_inc"] + [f"es_{y}" for y in EVENT_YEARS])
 write_table(log, p[keep], str(OUT / "annual_panel.csv"), sort_by=["idind", "year"])

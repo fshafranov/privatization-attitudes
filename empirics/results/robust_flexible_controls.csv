@@ -1,0 +1,13 @@
+spec,term,estimate,std_error,statistic,p_value,nobs,r2,r2_within,fstat_first_stage,se_type,fe,sample,outcome,n_controls,wild_p
+f1,treat_region,-0.0947738197,0.1692255859,-0.56004427,0.5794741666,22668,0.5078809714,0.0109534026,,CRV,idind+psu_year+age_year+owner_year,idx_democracy,idx_democracy,72,0.6084608461
+f2,treat_region,-0.098464708,0.1664133048,-0.5916877146,0.5583504016,22668,0.5068221197,0.0088253532,,CRV,idind+psu_year+age_year+owner_year,idx_democracy,idx_democracy,27,0.5902590259
+f3,treat_region,-0.0964017476,0.1488509073,-0.6476396371,0.5219858949,22668,0.5078811433,0.0109537482,,CRV,idind+psu_year+age_year+owner_year,idx_democracy,idx_democracy,73,0.5370537054
+r7,treat_region,-0.1197445991,0.1628452636,-0.7353274907,0.4676671994,22668,0.5024552886,4.90223e-05,,CRV,idind+psu_year+age_year+owner_year,idx_democracy,idx_democracy,0,0.5073507351
+f1,treat_region,-0.1736160352,0.1557572084,-1.1146581079,0.2735643103,22524,0.5874685509,0.0153141593,,CRV,idind+psu_year+age_year+owner_year,idx_trust_state,idx_trust_state,72,0.2890289029
+f2,treat_region,-0.1751145315,0.1501775865,-1.1660497122,0.2524873924,22524,0.5829340017,0.0044904841,,CRV,idind+psu_year+age_year+owner_year,idx_trust_state,idx_trust_state,2,0.2674267427
+f3,treat_region,-0.1297368042,0.1455726051,-0.8912171633,0.3796779983,22524,0.5875952382,0.0156165537,,CRV,idind+psu_year+age_year+owner_year,idx_trust_state,idx_trust_state,73,0.3848384838
+r7,treat_region,-0.170861185,0.1514571057,-1.1281160051,0.2679265003,22524,0.5811026986,0.0001192821,,CRV,idind+psu_year+age_year+owner_year,idx_trust_state,idx_trust_state,0,0.2850285029
+f1,treat_region,-0.4040264735,0.2339921426,-1.7266668399,0.0941817914,22420,0.5468061738,0.0157254869,,CRV,idind+psu_year+age_year+owner_year,trust_government,trust_government,72,0.0927092709
+f2,treat_region,-0.4036363792,0.2296040298,-1.7579673127,0.0886245208,22420,0.5440400823,0.0097179176,,CRV,idind+psu_year+age_year+owner_year,trust_government,trust_government,5,0.0892089209
+f3,treat_region,-0.3349189891,0.2191389677,-1.5283406353,0.1365685427,22420,0.5469710747,0.016083629,,CRV,idind+psu_year+age_year+owner_year,trust_government,trust_government,73,0.1232123212
+r7,treat_region,-0.4018894674,0.2276925726,-1.7650530401,0.0874056801,22420,0.5397079664,0.0003091589,,CRV,idind+psu_year+age_year+owner_year,trust_government,trust_government,0,0.0896089609

@@ -10,7 +10,7 @@ Writes:     data/processed/housing_wealth/housing_wealth.csv,
             data/processed/housing_wealth/housing_wealth_dropped.csv,
             data/processed/housing_wealth/price_index.csv, data/logs/process_housing_wealth.log
 Unit:       person-round (idind, year)
-Decisions:  ANALYSIS_PLAN.md D9-D13, D16
+Decisions:  ANALYSIS_PLAN.md D9-D13, D16-D18
 """
 import sys
 from pathlib import Path
@@ -29,7 +29,7 @@ DEMOC = ["j208_1", "j208_3", "j208_4", "j208_5"]  # j209 items exist in 2006 onl
 log = get_logger("process_housing_wealth")
 root = project_root()
 ind = pd.read_csv(root / "data/clean/rlms/rlms_ind.csv",
-                  usecols=["idind", "id_w", "id_h", "year", "age", "h5", "diplom", "j60"] + TRUST + DEMOC)
+                  usecols=["idind", "id_w", "id_h", "year", "age", "h5", "diplom", "j60", "j1", "j23", "marst"] + TRUST + DEMOC)
 hh = pd.read_csv(root / "data/clean/rlms/rlms_hh.csv")
 check(all(ind.loc[ind.year == y, "id_w"].eq(w).all() for y, w in ROUND.items()), "round numbers do not match years")
 
@@ -57,16 +57,35 @@ log.info("price_index", psu_rounds=len(psu_idx), min_owners=int(psu_idx.n_owners
 
 # == PHASE 2: SAMPLE AND MERGES ==============================================
 p = ind[ind.year.isin(YEARS)].copy()
-p = checked_merge(log, p, hh[["id_h", "id_w", "psu", "c1", "c4_0", "c1_1", "c6"]], on=["id_h", "id_w"],
+p = checked_merge(log, p, hh[["id_h", "id_w", "psu", "status", "nfm1_n", "c1", "c4_0", "c1_1", "c6", "c9_12a"]], on=["id_h", "id_w"],
                   how="left", validate="m:1", name="person x household")
 tr = AttritionTracker(log, p, "person-rounds 2006/2012/2017/2018")
 p = tr.filter(p, p.age >= 18, "age 18+")
 # baseline tenure in 2006 (ANALYSIS_PLAN.md D9)
-b = p[p.year == 2006][["idind", "c1", "c4_0", "c6", "psu"]].rename(columns={"psu": "psu_2006", "c6": "space_2006"})
+b = p[p.year == 2006][["idind", "id_h", "c1", "c4_0", "c6", "psu", "diplom", "j60", "j1", "j23", "marst", "status", "nfm1_n",
+                       "c9_12a"]].rename(columns={"psu": "psu_2006", "c6": "space_2006"})
 b["owner_2006"] = np.select(
     [(b.c1 == 1) & (b.c4_0 == 1), b.c1.isin([2, 3]) | b.c4_0.isin([2, 3])], [1.0, 0.0], default=np.nan)
 p = tr.filter(p, p.idind.isin(b.idind), "observed as adult in 2006 (baseline)")
-p = p.merge(b[["idind", "owner_2006", "space_2006", "psu_2006"]], on="idind", how="left", validate="m:1")
+# 2006 baseline characteristics for flexible baseline-by-year controls (ANALYSIS_PLAN.md D17);
+# missing values become their own category so no observation is lost
+cat = lambda s: s.map(lambda x: "missing" if pd.isna(x) else str(int(x)))
+b["b_educ"] = cat(b.diplom)
+inc3 = pd.qcut(b.j60.where(b.j60 > 0), 3, labels=["low", "mid", "high"]).astype(object)
+b["b_inc"] = inc3.where(inc3.notna(), "none")
+b["b_work"] = cat(b.j1)
+b["b_state_job"] = cat(b.j23)
+b["b_marst"] = cat(b.marst)
+b["b_settle"] = cat(b.status)
+# household size = people with an individual record in the household in 2006 (nfm1_n is asked of
+# only about a fifth of households)
+hh_n = ind[ind.year == 2006].groupby("id_h").size()
+size = pd.cut(b.id_h.map(hh_n), [0, 1, 2, 3, 4, 99], labels=["1", "2", "3", "4", "5+"]).astype(object)
+b["b_hhsize"] = size.where(size.notna(), "missing")
+b["second_flat_2006"] = np.where(b.c9_12a.isin([1, 2]), (b.c9_12a == 1).astype(float), np.nan)  # D18
+BASE = ["b_educ", "b_inc", "b_work", "b_state_job", "b_marst", "b_settle", "b_hhsize"]
+p = p.merge(b[["idind", "owner_2006", "space_2006", "psu_2006", "second_flat_2006"] + BASE], on="idind", how="left",
+            validate="m:1")
 p = tr.filter(p, p.owner_2006.notna(), "2006 tenure classifiable (own vs not)")
 p = tr.filter(p, p.psu == p.psu_2006, "same PSU as in 2006 (D9: movers dropped)")
 p = checked_merge(log, p, h[["id_h", "id_w", "log_p_loo"]], on=["id_h", "id_w"], how="left", validate="m:1",
@@ -119,6 +138,7 @@ log.info("panel", persons=int(p.idind.nunique()), rounds_per_person=p.groupby("i
          owners_2006_share=round(float(p.drop_duplicates("idind").owner_2006.mean()), 3))
 keep = ["idind", "year", "psu", "okato11", "owner_2006", "space_2006", "log_p_local", "treat", "exposure",
         "log_p_region", "treat_region", "exposure_region", "local_inc", "owner_x_local_inc", "log_value_m2_own",
-        "idx_trust_state", "idx_democracy", "trust_government", "age", "age_bin", "female", "diplom"]
+        "idx_trust_state", "idx_democracy", "trust_government", "age", "age_bin", "female", "diplom",
+        "second_flat_2006"] + BASE
 write_table(log, p[keep], str(OUT / "housing_wealth.csv"), sort_by=["idind", "year"])
 log.info("end")

@@ -47,6 +47,10 @@ STEPS = [
     ("empirics", "empirics/scripts/03_analyze_housing_wealth.py", ['process_housing_wealth']),
     ("empirics", "empirics/scripts/05_analyze_event_study.py", ['process_annual_panel']),
     ("empirics", "empirics/scripts/06_explore_housing_figures.py", ['03_analyze_housing_wealth', 'process_housing_wealth', '05_analyze_event_study']),
+    ("empirics", "empirics/scripts/07_robust_flexible_controls.py", ['process_housing_wealth']),
+    ("empirics", "empirics/scripts/08_analyze_second_flat.py", ['process_housing_wealth']),
+    ("empirics", "empirics/scripts/09_robust_permutation.py", ['process_housing_wealth']),
+    ("empirics", "empirics/scripts/10_explore_robustness_figures.py", ['07_robust_flexible_controls', '08_analyze_second_flat', '09_robust_permutation']),
 ]
 STAGES = ["collection", "cleaning", "processing", "empirics"]
 

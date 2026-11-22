@@ -38,7 +38,7 @@ IND_COLS = (
     + [f"j207_{i}" for i in (1, 2, 3, 5, 6, 7, 8, 9, 10, 11)]
     + [f"j208_{i}" for i in range(1, 8)]
 )
-HH_COLS = ["id_w", "id_h", "psu", "region", "status", "c1", "c2", "c4", "c4_0", "c1_1", "c5", "c6"]
+HH_COLS = ["id_w", "id_h", "psu", "region", "status", "nfm1_n", "c1", "c2", "c4", "c4_0", "c1_1", "c5", "c6", "c9_12a", "f12_5a"]
 SENTINELS = [99999996, 99999997, 99999998, 99999999]  # none of these / DK / refused / no answer
 NOTHING = 99999996  # j214_*: "there is nothing that can be done" is an answer, kept as code 96 (D7)
 DK = 99999997
@@ -47,7 +47,7 @@ DK = 99999997
 CATEGORY_SETS = {
     "j223": {1, 2, 3, 4}, "j224": {1, 2}, "j26": {1, 2}, "h5": {1, 2},
     "j210_1": {1}, "j210_2": {2}, "j210_3": {3}, "j210_4": {4},
-    "c2": {1, 2}, "c1": {1, 2, 3}, "c4_0": {1, 2, 3, 4},
+    "c2": {1, 2}, "c1": {1, 2, 3}, "c4_0": {1, 2, 3, 4}, "c9_12a": {1, 2}, "f12_5a": {1, 2},
 }
 RANGES = {"age": (0, 110), "year": (1994, 2025), "id_w": (5, 34), "c6": (1, 5000), "c1_1": (0, 5e9)}
 

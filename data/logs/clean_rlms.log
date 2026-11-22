@@ -1,74 +1,76 @@
-2026-11-22 23:22:59 [info     ] start                            script=clean_rlms
-2026-11-22 23:23:00 [info     ] shape                            cols=12 data='rlms_hh raw' rows=178343 script=clean_rlms
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=627 script=clean_rlms var=c1
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=116 script=clean_rlms var=c2
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=367 script=clean_rlms var=c4
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=455 script=clean_rlms var=c4_0
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=7574 script=clean_rlms var=c5
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=7901 script=clean_rlms var=c6
-2026-11-22 23:23:00 [info     ] recode_sentinels                 n_recoded=42943 script=clean_rlms var=c1_1
-2026-11-22 23:23:00 [info     ] shape                            cols=12 data='rlms_hh clean' rows=178343 script=clean_rlms
-2026-11-22 23:23:00 [info     ] share_missing                    data=rlms_hh script=clean_rlms share={'id_w': 0.0, 'id_h': 0.0, 'psu': 0.0, 'status': 0.0, 'region': 0.0, 'c1': 0.0393, 'c2': 0.8566, 'c4': 0.8174, 'c4_0': 0.3445, 'c5': 0.0782, 'c6': 0.0443, 'c1_1': 0.4163}
-2026-11-22 23:23:00 [info     ] wrote                            cols=12 file=data/clean/rlms/rlms_hh.csv rows=178343 script=clean_rlms
-2026-11-22 23:23:07 [info     ] shape                            cols=73 data='rlms_ind raw' rows=474600 script=clean_rlms
-2026-11-22 23:23:07 [info     ] recode                           code=99999997 n=1774 script=clean_rlms to=7 var=j223
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=468 script=clean_rlms to=96 var=j214_01
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_02
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_03
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_04
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_05
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_06
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_07
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_08
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_09
-2026-11-22 23:23:07 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_10
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=866 script=clean_rlms var=marst
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=759 script=clean_rlms var=diplom
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=321 script=clean_rlms var=j1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=7203 script=clean_rlms var=j23
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1010 script=clean_rlms var=j26
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=970 script=clean_rlms var=j28
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=11670 script=clean_rlms var=j60
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=3069 script=clean_rlms var=j65
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=4701 script=clean_rlms var=j66
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=3588 script=clean_rlms var=j66_1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=6721 script=clean_rlms var=j69_5
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1866 script=clean_rlms var=j69_7
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=2433 script=clean_rlms var=j107
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=2129 script=clean_rlms var=j110
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=4635 script=clean_rlms var=j206
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=2443 script=clean_rlms var=j207_1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=3027 script=clean_rlms var=j207_2
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=4624 script=clean_rlms var=j207_3
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=3760 script=clean_rlms var=j207_5
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=2772 script=clean_rlms var=j207_6
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=6260 script=clean_rlms var=j207_7
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=16741 script=clean_rlms var=j207_8
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=10937 script=clean_rlms var=j207_9
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=8873 script=clean_rlms var=j207_10
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=8251 script=clean_rlms var=j207_11
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1381 script=clean_rlms var=j208_1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=922 script=clean_rlms var=j208_2
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1548 script=clean_rlms var=j208_3
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=2377 script=clean_rlms var=j208_4
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=5847 script=clean_rlms var=j208_5
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1370 script=clean_rlms var=j208_6
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=4808 script=clean_rlms var=j208_7
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1277 script=clean_rlms var=j209_1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1533 script=clean_rlms var=j209_2
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=770 script=clean_rlms var=j209_3
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=835 script=clean_rlms var=j209_4
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=1578 script=clean_rlms var=j209_5
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=679 script=clean_rlms var=j210_1
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=769 script=clean_rlms var=j211_01
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=544 script=clean_rlms var=j214_01
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=31 script=clean_rlms var=j219
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=38 script=clean_rlms var=j223
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=41 script=clean_rlms var=j224
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=307 script=clean_rlms var=j226
-2026-11-22 23:23:07 [info     ] recode_sentinels                 n_recoded=3564 script=clean_rlms var=j228_2
-2026-11-22 23:23:07 [info     ] shape                            cols=73 data='rlms_ind clean' rows=474600 script=clean_rlms
-2026-11-22 23:23:07 [info     ] share_missing                    data=rlms_ind script=clean_rlms share={'id_w': 0.0, 'idind': 0.0, 'year': 0.0, 'id_h': 0.0, 'region': 0.0, 'psu': 0.0, 'status': 0.0, 'int_y': 0.0, 'marst': 0.173, 'diplom': 0.1727, 'h5': 0.0, 'age': 0.0, 'j1': 0.1718, 'j23': 0.6069, 'j26': 0.5938, 'j28': 0.9921, 'j60': 0.1957, 'j65': 0.1776, 'j66': 0.181, 'j66_1': 0.2511, 'j69_5': 0.937, 'j69_7': 0.968, 'j107': 0.9647, 'j110': 0.9196, 'j206': 0.5344, 'j207_1': 0.8753, 'j207_2': 0.8766, 'j207_3': 0.8799, 'j207_5': 0.8781, 'j207_6': 0.876, 'j207_7': 0.8515, 'j207_8': 0.9055, 'j207_9': 0.8614, 'j207_10': 0.8889, 'j207_11': 0.8876, 'j208_1': 0.8731, 'j208_2': 0.8721, 'j208_3': 0.8734, 'j208_4': 0.8752, 'j208_5': 0.8825, 'j208_6': 0.8731, 'j208_7': 0.8803, 'j209_1': 0.9764, 'j209_2': 0.9769, 'j209_3': 0.9753, 'j209_4': 0.9754, 'j209_5': 0.977, 'j210_1': 0.9948, 'j210_2': 0.9913, 'j210_3': 0.9832, 'j210_4': 0.9877, 'j211_01': 0.9954, 'j211_02': 0.9958, 'j211_03': 0.9945, 'j211_04': 0.9923, 'j211_05': 0.9886, 'j211_06': 0.9925, 'j211_07': 0.9955, 'j214_01': 0.9927, 'j214_02': 0.9925, 'j214_03': 0.9894, 'j214_04': 0.9882, 'j214_05': 0.9989, 'j214_06': 0.9934, 'j214_07': 0.9882, 'j214_08': 0.9925, 'j214_09': 0.9989, 'j214_10': 0.9994, 'j219': 0.9847, 'j223': 0.9738, 'j224': 0.9847, 'j226': 0.9818, 'j228_2': 0.9568}
-2026-11-22 23:23:12 [info     ] wrote                            cols=73 file=data/clean/rlms/rlms_ind.csv rows=474600 script=clean_rlms
-2026-11-22 23:23:12 [info     ] wrote                            cols=5 file=data/clean/rlms/discrepancies.csv rows=0 script=clean_rlms
-2026-11-22 23:23:12 [info     ] end                              script=clean_rlms
+2026-11-22 23:54:04 [info     ] start                            script=clean_rlms
+2026-11-22 23:54:05 [info     ] shape                            cols=15 data='rlms_hh raw' rows=178343 script=clean_rlms
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=627 script=clean_rlms var=c1
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=116 script=clean_rlms var=c2
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=367 script=clean_rlms var=c4
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=455 script=clean_rlms var=c4_0
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=7574 script=clean_rlms var=c5
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=7901 script=clean_rlms var=c6
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=42943 script=clean_rlms var=c1_1
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=255 script=clean_rlms var=c9_12a
+2026-11-22 23:54:05 [info     ] recode_sentinels                 n_recoded=224 script=clean_rlms var=f12_5a
+2026-11-22 23:54:05 [info     ] shape                            cols=15 data='rlms_hh clean' rows=178343 script=clean_rlms
+2026-11-22 23:54:05 [info     ] share_missing                    data=rlms_hh script=clean_rlms share={'id_w': 0.0, 'id_h': 0.0, 'psu': 0.0, 'status': 0.0, 'region': 0.0, 'nfm1_n': 0.9207, 'c1': 0.0393, 'c2': 0.8566, 'c4': 0.8174, 'c4_0': 0.3445, 'c5': 0.0782, 'c6': 0.0443, 'c1_1': 0.4163, 'c9_12a': 0.0014, 'f12_5a': 0.0013}
+2026-11-22 23:54:06 [info     ] wrote                            cols=15 file=data/clean/rlms/rlms_hh.csv rows=178343 script=clean_rlms
+2026-11-22 23:54:13 [info     ] shape                            cols=73 data='rlms_ind raw' rows=474600 script=clean_rlms
+2026-11-22 23:54:13 [info     ] recode                           code=99999997 n=1774 script=clean_rlms to=7 var=j223
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=468 script=clean_rlms to=96 var=j214_01
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_02
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_03
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_04
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_05
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_06
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_07
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_08
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_09
+2026-11-22 23:54:13 [info     ] recode                           code=99999996 n=0 script=clean_rlms to=96 var=j214_10
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=866 script=clean_rlms var=marst
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=759 script=clean_rlms var=diplom
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=321 script=clean_rlms var=j1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=7203 script=clean_rlms var=j23
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1010 script=clean_rlms var=j26
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=970 script=clean_rlms var=j28
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=11670 script=clean_rlms var=j60
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=3069 script=clean_rlms var=j65
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=4701 script=clean_rlms var=j66
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=3588 script=clean_rlms var=j66_1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=6721 script=clean_rlms var=j69_5
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1866 script=clean_rlms var=j69_7
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=2433 script=clean_rlms var=j107
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=2129 script=clean_rlms var=j110
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=4635 script=clean_rlms var=j206
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=2443 script=clean_rlms var=j207_1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=3027 script=clean_rlms var=j207_2
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=4624 script=clean_rlms var=j207_3
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=3760 script=clean_rlms var=j207_5
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=2772 script=clean_rlms var=j207_6
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=6260 script=clean_rlms var=j207_7
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=16741 script=clean_rlms var=j207_8
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=10937 script=clean_rlms var=j207_9
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=8873 script=clean_rlms var=j207_10
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=8251 script=clean_rlms var=j207_11
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1381 script=clean_rlms var=j208_1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=922 script=clean_rlms var=j208_2
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1548 script=clean_rlms var=j208_3
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=2377 script=clean_rlms var=j208_4
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=5847 script=clean_rlms var=j208_5
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1370 script=clean_rlms var=j208_6
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=4808 script=clean_rlms var=j208_7
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1277 script=clean_rlms var=j209_1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1533 script=clean_rlms var=j209_2
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=770 script=clean_rlms var=j209_3
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=835 script=clean_rlms var=j209_4
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=1578 script=clean_rlms var=j209_5
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=679 script=clean_rlms var=j210_1
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=769 script=clean_rlms var=j211_01
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=544 script=clean_rlms var=j214_01
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=31 script=clean_rlms var=j219
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=38 script=clean_rlms var=j223
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=41 script=clean_rlms var=j224
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=307 script=clean_rlms var=j226
+2026-11-22 23:54:13 [info     ] recode_sentinels                 n_recoded=3564 script=clean_rlms var=j228_2
+2026-11-22 23:54:13 [info     ] shape                            cols=73 data='rlms_ind clean' rows=474600 script=clean_rlms
+2026-11-22 23:54:13 [info     ] share_missing                    data=rlms_ind script=clean_rlms share={'id_w': 0.0, 'idind': 0.0, 'year': 0.0, 'id_h': 0.0, 'region': 0.0, 'psu': 0.0, 'status': 0.0, 'int_y': 0.0, 'marst': 0.173, 'diplom': 0.1727, 'h5': 0.0, 'age': 0.0, 'j1': 0.1718, 'j23': 0.6069, 'j26': 0.5938, 'j28': 0.9921, 'j60': 0.1957, 'j65': 0.1776, 'j66': 0.181, 'j66_1': 0.2511, 'j69_5': 0.937, 'j69_7': 0.968, 'j107': 0.9647, 'j110': 0.9196, 'j206': 0.5344, 'j207_1': 0.8753, 'j207_2': 0.8766, 'j207_3': 0.8799, 'j207_5': 0.8781, 'j207_6': 0.876, 'j207_7': 0.8515, 'j207_8': 0.9055, 'j207_9': 0.8614, 'j207_10': 0.8889, 'j207_11': 0.8876, 'j208_1': 0.8731, 'j208_2': 0.8721, 'j208_3': 0.8734, 'j208_4': 0.8752, 'j208_5': 0.8825, 'j208_6': 0.8731, 'j208_7': 0.8803, 'j209_1': 0.9764, 'j209_2': 0.9769, 'j209_3': 0.9753, 'j209_4': 0.9754, 'j209_5': 0.977, 'j210_1': 0.9948, 'j210_2': 0.9913, 'j210_3': 0.9832, 'j210_4': 0.9877, 'j211_01': 0.9954, 'j211_02': 0.9958, 'j211_03': 0.9945, 'j211_04': 0.9923, 'j211_05': 0.9886, 'j211_06': 0.9925, 'j211_07': 0.9955, 'j214_01': 0.9927, 'j214_02': 0.9925, 'j214_03': 0.9894, 'j214_04': 0.9882, 'j214_05': 0.9989, 'j214_06': 0.9934, 'j214_07': 0.9882, 'j214_08': 0.9925, 'j214_09': 0.9989, 'j214_10': 0.9994, 'j219': 0.9847, 'j223': 0.9738, 'j224': 0.9847, 'j226': 0.9818, 'j228_2': 0.9568}
+2026-11-22 23:54:17 [info     ] wrote                            cols=73 file=data/clean/rlms/rlms_ind.csv rows=474600 script=clean_rlms
+2026-11-22 23:54:17 [info     ] wrote                            cols=5 file=data/clean/rlms/discrepancies.csv rows=0 script=clean_rlms
+2026-11-22 23:54:17 [info     ] end                              script=clean_rlms
