@@ -1,0 +1,22 @@
+notes/
+__pycache__/
+*.pyc
+.venv/
+.env
+.Rhistory
+.RData
+renv/library/
+*.part
+.DS_Store
+
+# Licence-restricted RLMS-HSE microdata (Data Use Agreement): never commit raw files or
+# person-level derivatives. Re-obtain via data/scripts/collection/acquire_rlms.py (manual step).
+data/raw/rlms/*.zip
+data/raw/rlms/*.7z
+data/clean/rlms/
+data/processed/
+# Third-party pages, re-downloadable with acquire_housing_prices.py (checksums in MANIFEST.sha256)
+data/raw/statbase_housing/*.html
+
+# Literature PDFs (copyrighted; kept locally)
+papers/*.pdf

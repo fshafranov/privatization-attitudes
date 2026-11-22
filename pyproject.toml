@@ -1,0 +1,36 @@
+[project]
+name = "mass-privatization-and-political-attitudes-in-russia-rlms"
+version = "0.1.0"
+description = "Replication package: Mass privatization and political attitudes in Russia (RLMS)"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx",
+    "matplotlib>=3.11.2",
+    "numpy",
+    "openpyxl>=3.1.5",
+    "pandas",
+    "pydantic-settings",
+    "pyfixest",
+    "pyreadstat>=1.3.8",
+    "structlog",
+    "tenacity",
+    "wildboottest>=0.3.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.14.10",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
