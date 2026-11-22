@@ -1,13 +1,15 @@
 """
-04_explore_housing_figures.py
+06_explore_housing_figures.py
 Stage:      analysis (descriptive figures for the housing-wealth trial)
 Purpose:    fig5: local price paths by PSU, 2006-2018; fig6: first stage as a binned scatter
             (owners' own log value per m2 vs the leave-out local index, both net of person and
             year FE); fig7: reduced-form coefficients across specifications.
 Reproduces: n/a: original analysis
 Reads:      data/processed/housing_wealth/housing_wealth.csv, data/processed/housing_wealth/price_index.csv,
-            empirics/results/analyze_housing_wealth.csv
+            empirics/results/analyze_housing_wealth.csv, empirics/results/analyze_event_study.csv,
+            empirics/results/analyze_event_study_pretrends.csv
 Writes:     empirics/results/figures/fig5_local_prices.png, fig6_first_stage.png, fig7_housing_reduced_form.png,
+            fig8_event_study.png,
             empirics/results/explore_housing_figures.csv, empirics/results/logs/explore_housing_figures.log
 """
 import sys
@@ -140,6 +142,39 @@ fig.text(0.01, -0.06, "Coefficient on owner-in-2006 × log price, relative to no
          fontsize=8, color=MUTED)
 fig.tight_layout(rect=(0, 0, 0.93, 0.9))
 fig.savefig(FIG / "fig7_housing_reduced_form.png", bbox_inches="tight")
+plt.close(fig)
+
+# == FIGURE 8: EVENT STUDY AROUND THE 2008-09 REGIONAL PRICE BUST ===========
+es = pd.read_csv(root / "empirics/results/analyze_event_study.csv")
+pt = pd.read_csv(root / "empirics/results/analyze_event_study_pretrends.csv").set_index("outcome")
+OUTS8 = [("econ_sat", "Satisfaction with own economic situation"), ("life_sat", "Life satisfaction")]
+fig, axes = plt.subplots(1, 2, figsize=(9.5, 3.6), sharey=True)
+for ax, (outcome, title) in zip(axes, OUTS8):
+    d = es[(es.outcome == outcome) & (es.spec == "es")].copy()
+    d["year"] = d.term.str[3:].astype(int)
+    d = pd.concat([d, pd.DataFrame({"year": [2007], "estimate": [0.0], "std_error": [0.0]})]).sort_values("year")
+    check(len(d) == 11, f"fig8: expected 11 years for {outcome}, found {len(d)}")
+    ax.axvspan(2007.5, 2009.5, color="#f0efec", zorder=0)
+    ax.fill_between(d.year, d.estimate - 1.96 * d.std_error, d.estimate + 1.96 * d.std_error, color=BLUE,
+                    alpha=0.15, lw=0)
+    ax.plot(d.year, d.estimate, color=BLUE, lw=2, marker="o", ms=6, mec=SURFACE, mew=1.5)
+    ax.axhline(0, color=AXIS, lw=1, zorder=1)
+    ax.set_title(title, loc="left", fontsize=10)
+    ax.text(0.02, 0.95, f"pre-2007 joint test p = {pt.loc[outcome, 'p_value']:.2f}", transform=ax.transAxes,
+            fontsize=8, color=MUTED, va="top")
+    ax.set_xticks([2003, 2005, 2007, 2009, 2011, 2013])
+    ax.grid(axis="y", color=GRID, lw=0.6)
+    plotted.extend({"figure": "fig8", "series": outcome, "x": int(y), "y": round(float(v), 4)}
+                   for y, v in zip(d.year, d.estimate))
+axes[0].set_ylabel("Points on 1-5 scale per log point\nof regional price change 2008-09")
+axes[0].text(2008.5, axes[0].get_ylim()[1] * 0.85, "bust", ha="center", fontsize=8, color=MUTED)
+fig.suptitle("No clear break for owners in regions where prices fell more in 2008-09", x=0.01, ha="left",
+             fontsize=11, fontweight="bold")
+fig.text(0.01, -0.05, "Coefficient by year on owner-in-2006 × regional log price change 2008-2009 (2007 = 0; positive = owners do better where prices held up), with person, "
+         "unit-by-year and age-group-by-year FE; 95% CIs clustered by region (32). RLMS 2003-2013.",
+         fontsize=8, color=MUTED)
+fig.tight_layout()
+fig.savefig(FIG / "fig8_event_study.png", bbox_inches="tight")
 plt.close(fig)
 
 write_table(log, pd.DataFrame(plotted), f"empirics/results/{EXERCISE}.csv", sort_by=["figure", "series", "x"])

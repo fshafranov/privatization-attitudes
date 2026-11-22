@@ -41,10 +41,12 @@ STEPS = [
     ("cleaning", "data/scripts/cleaning/clean_housing_prices.py", []),
     ("processing", "data/scripts/processing/process_longrun_2006.py", ['clean_rlms']),
     ("processing", "data/scripts/processing/process_housing_wealth.py", ['clean_rlms', 'clean_housing_prices']),
+    ("processing", "data/scripts/processing/process_annual_panel.py", ['clean_rlms', 'clean_housing_prices']),
     ("empirics", "empirics/scripts/01_analyze_longrun_2006.py", ['process_longrun_2006']),
     ("empirics", "empirics/scripts/02_explore_figures.py", ['01_analyze_longrun_2006', 'process_longrun_2006', 'clean_rlms']),
     ("empirics", "empirics/scripts/03_analyze_housing_wealth.py", ['process_housing_wealth']),
-    ("empirics", "empirics/scripts/04_explore_housing_figures.py", ['03_analyze_housing_wealth', 'process_housing_wealth']),
+    ("empirics", "empirics/scripts/05_analyze_event_study.py", ['process_annual_panel']),
+    ("empirics", "empirics/scripts/06_explore_housing_figures.py", ['03_analyze_housing_wealth', 'process_housing_wealth', '05_analyze_event_study']),
 ]
 STAGES = ["collection", "cleaning", "processing", "empirics"]
 
