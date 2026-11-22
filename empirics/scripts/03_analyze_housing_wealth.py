@@ -64,9 +64,14 @@ def run(fml, data, spec, label, outcome, boot_param=None, cluster="psu"):
     if boot_param is not None:
         try:  # wild cluster bootstrap on FWL-residualized data (few clusters); ANALYSIS_PLAN.md D12
             fes = [f.strip() for f in fml.split("|")[1].split("+")]
-            d = data.dropna(subset=[outcome, boot_param])
-            r = demean(d, [outcome, boot_param], fes).rename(columns={outcome: "ry", boot_param: "rx"})
-            r[cluster] = d[cluster].to_numpy()
+            others = [x for x in fml.split("~")[1].split("|")[0].replace(" ", "").split("+") if x != boot_param]
+            d = data.dropna(subset=[outcome, boot_param] + others)
+            r = demean(d, [outcome, boot_param] + others, fes)
+            if others:  # partial out the other regressors too (FWL)
+                b = np.linalg.lstsq(r[others].to_numpy(), r[[outcome, boot_param]].to_numpy(), rcond=None)[0]
+                r[[outcome, boot_param]] = r[[outcome, boot_param]].to_numpy() - r[others].to_numpy() @ b
+            r = r[[outcome, boot_param]].rename(columns={outcome: "ry", boot_param: "rx"})
+            r[cluster] = pd.factorize(d[cluster])[0]  # integer codes: the bootstrap cannot take strings
             fwl = pf.feols("ry ~ rx", data=r, vcov={"CRV1": cluster})
             check(abs(float(fwl.coef()["rx"]) - float(res.coef()[boot_param])) < 1e-6,
                   f"FWL coefficient differs from FE estimate in {label} {spec}")
@@ -114,6 +119,9 @@ for outcome in ["idx_trust_state", "idx_democracy", "trust_government"]:
         "exposure_region", "okato11")
     run(f"{outcome} ~ treat_region | idind + psu_year + age_year", d[~d.psu.isin([1, 2])], "r5",
         "reduced_form_region_no_capitals", outcome, "treat_region", "okato11")
+    # r6: r3 + owner x local income (D16): separates housing prices from a general regional boom
+    run(f"{outcome} ~ treat_region + owner_x_local_inc | idind + psu_year + age_year", d, "r6",
+        "reduced_form_region_income", outcome, "treat_region", "okato11")
 
 out = pd.concat(results, ignore_index=True)
 out = out[out.term.isin(["log_p_local", "treat", "exposure", "log_p_region", "treat_region", "exposure_region"])]
