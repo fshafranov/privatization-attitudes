@@ -51,6 +51,7 @@ STEPS = [
     ("empirics", "empirics/scripts/08_analyze_second_flat.py", ['process_housing_wealth']),
     ("empirics", "empirics/scripts/09_robust_permutation.py", ['process_housing_wealth']),
     ("empirics", "empirics/scripts/10_explore_robustness_figures.py", ['07_robust_flexible_controls', '08_analyze_second_flat', '09_robust_permutation']),
+    ("empirics", "empirics/scripts/11_robust_sign_diagnostics.py", ['process_housing_wealth']),
 ]
 STAGES = ["collection", "cleaning", "processing", "empirics"]
 

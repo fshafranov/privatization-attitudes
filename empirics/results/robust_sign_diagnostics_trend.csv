@@ -1,0 +1,10 @@
+spec,term,estimate,std_error,statistic,p_value,nobs,r2,r2_within,fstat_first_stage,se_type,fe,sample,outcome
+trend,owner_2012,-0.0158321844,0.0401123171,-0.3946963318,0.6957695697,22668,0.5024308967,0.0003443292,,CRV,idind+psu_year+age_year,idx_democracy,idx_democracy
+trend,owner_2017,-0.0768180322,0.0445469407,-1.7244289055,0.0945901174,22668,0.5024308967,0.0003443292,,CRV,idind+psu_year+age_year,idx_democracy,idx_democracy
+trend,owner_2018,-0.017065717,0.0469920568,-0.3631617361,0.7189487951,22668,0.5024308967,0.0003443292,,CRV,idind+psu_year+age_year,idx_democracy,idx_democracy
+trend,owner_2012,0.0554215356,0.0300218277,1.8460413584,0.0744548506,22524,0.5810527256,0.0004196822,,CRV,idind+psu_year+age_year,idx_trust_state,idx_trust_state
+trend,owner_2017,0.0423387731,0.0388629782,1.0894371729,0.2843578909,22524,0.5810527256,0.0004196822,,CRV,idind+psu_year+age_year,idx_trust_state,idx_trust_state
+trend,owner_2018,-0.0100835814,0.0434383094,-0.2321356782,0.8179583021,22524,0.5810527256,0.0004196822,,CRV,idind+psu_year+age_year,idx_trust_state,idx_trust_state
+trend,owner_2012,0.1185784887,0.0559234036,2.1203732438,0.0420794889,22420,0.539565619,0.0007161739,,CRV,idind+psu_year+age_year,trust_government,trust_government
+trend,owner_2017,0.1022517468,0.0453765377,2.25340566,0.0314510715,22420,0.539565619,0.0007161739,,CRV,idind+psu_year+age_year,trust_government,trust_government
+trend,owner_2018,0.0221248321,0.0620931319,0.3563168972,0.7240169877,22420,0.539565619,0.0007161739,,CRV,idind+psu_year+age_year,trust_government,trust_government

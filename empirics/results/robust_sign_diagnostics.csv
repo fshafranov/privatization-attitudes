@@ -1,0 +1,4 @@
+spec,term,estimate,std_error,statistic,p_value,nobs,r2,r2_within,fstat_first_stage,se_type,fe,sample,outcome
+r7,treat_region,-0.1197445991,0.1628452636,-0.7353274907,0.4676671994,22668,0.5024552886,4.90223e-05,,CRV,idind+psu_year+age_year+owner_year,idx_democracy,idx_democracy
+r7,treat_region,-0.170861185,0.1514571057,-1.1281160051,0.2679265003,22524,0.5811026986,0.0001192821,,CRV,idind+psu_year+age_year+owner_year,idx_trust_state,idx_trust_state
+r7,treat_region,-0.4018894674,0.2276925726,-1.7650530401,0.0874056801,22420,0.5397079664,0.0003091589,,CRV,idind+psu_year+age_year+owner_year,trust_government,trust_government
