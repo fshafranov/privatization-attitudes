@@ -6,6 +6,42 @@ not identify a clear effect. Everything below reruns from the raw files with one
 
 ![Owner x house price estimates across specifications](empirics/results/figures/fig7_housing_reduced_form.png)
 
+**What the figure estimates.** For adult *i* in RLMS sampling unit *u*, region *r* and survey round
+*t* ∈ {2006, 2012, 2017, 2018}:
+
+$$
+y_{it} = \beta\,\big(\text{Own}_{i,2006} \times \log P_{r,t}\big) + \alpha_i + \gamma_{u,t} + [\,\delta_{a,t}\,] + [\,\theta_{\text{Own},t}\,] + \varepsilon_{it}
+$$
+
+- *y*: trust-in-state-institutions index (government, Duma, courts, army, police, parties) or
+  democratic-values index (importance of free elections, free speech, a free press, an opposition),
+  each in standard deviations of 2006.
+- *Own*<sub>i,2006</sub>: the household owned its home in 2006, fixed at baseline.
+- *P*: average price per m² on the secondary housing market, end of year. Blue = leave-one-out
+  index of RLMS owners' own valuations in the sampling unit (38 units); orange = Rosstat regional
+  price (32 regions).
+- *β*: change in owners' attitude, relative to non-owners in the same unit and year, per log point
+  of price (one log point ≈ prices × 2.7).
+
+| Row in figure | Fixed effects | Identifying variation | Trust index (Rosstat prices) | Democratic values (Rosstat prices) |
+|---|---|---|---|---|
+| Person + unit-by-year FE | α<sub>i</sub>, γ<sub>u,t</sub> | national price path + regional differences | +0.090 (wild p 0.03) | −0.075 (p 0.30) |
+| + age-group-by-year FE | + δ<sub>a,t</sub> (18–30, 31–45, 46–60, 61+) | same, net of age-specific trends | +0.033 (p 0.39) | −0.067 (p 0.34) |
+| + age FE, without Moscow / St Petersburg | as above, two capitals dropped | same | +0.037 (p 0.40) | −0.054 (p 0.48) |
+| + owner-by-year FE | + θ<sub>Own,t</sub> | **regional differences only** | −0.171 (p 0.29) | −0.120 (p 0.51) |
+
+Standard errors are clustered by region for Rosstat prices (by sampling unit for the survey
+index); p-values are wild cluster bootstrap. The panel has about 6,950 adults observed in at least
+two of the four rounds, three quarters of them owners in 2006.
+
+**Why the sign changes in the last row.** Prices rose almost everywhere at once (by about 0.54 log
+points between 2006 and 2012). In the first three rows, owners' price exposure therefore moves mostly
+with the calendar, and β also absorbs anything else that moved owners relative to non-owners over
+those years. The owner-by-year effects θ remove every owner-specific change common to all regions,
+so β is identified only by whether owners in regions with *faster-than-average* price growth
+changed more than owners elsewhere. Those regional differences are small (SD about 0.19), so the
+estimate is noisy. The two readings are discussed below.
+
 ## The question
 
 Mass privatization made most Russians owners overnight: of their flats (free privatization from
