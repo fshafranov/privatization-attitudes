@@ -75,8 +75,11 @@ Last updated: 2026-11-23
 - **Bottom line:** no evidence that housing-wealth changes moved owners' political attitudes or
   satisfaction. The only near-significant estimate (trust in government, p about 0.09) points to
   less trust, the opposite of the "more to lose -> loyal" story. Treat as a null result.
-- **Next step:** user decision: park, or chase the housing hint with a design that has outside
-  variation in privatization timing (none found in RLMS so far).
+- **Status: PARKED (2026-11-23).** Published as a public GitHub repository (README with fig7). The
+  user is not convinced the positive no-owner-trend estimate is spurious: owner-by-year FE also
+  absorb any genuine nationwide wealth effect, so the national-time-variation reading is open.
+- **If resumed:** a supply-side instrument for regional prices (pre-2006 housing completions x
+  national demand) to separate housing wealth from other owner trends.
 
 ## Session history
 
@@ -198,3 +201,12 @@ Last updated: 2026-11-23
 - Failed: nothing.
 - Key decisions: none new (R4 documents D19).
 - Commit: see git log on feature/sign-diagnostics
+
+### 2026-11-23 (e)
+- Done: README for publication; run_all logs project-relative paths; regional price file git-ignored;
+  history rewritten (no-reply author email; price file and old logs with home paths removed); pushed
+  to a public GitHub repository.
+- Succeeded: see git log; project parked.
+- Failed: nothing.
+- Key decisions: price data not redistributed (user, 2026-11-23).
+- Commit: see git log

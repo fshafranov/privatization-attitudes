@@ -1,30 +1,4 @@
-2026-11-23 00:54:04,330 | INFO    | START run_all.py : 14 steps
-2026-11-23 00:54:04,368 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_rlms.py
-2026-11-23 00:54:17,948 | INFO    | DONE data/scripts/cleaning/clean_rlms.py
-2026-11-23 00:54:17,949 | INFO    | RUN [cleaning] .venv/bin/python3 data/scripts/cleaning/clean_housing_prices.py
-2026-11-23 00:54:18,375 | INFO    | DONE data/scripts/cleaning/clean_housing_prices.py
-2026-11-23 00:54:18,375 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_longrun_2006.py
-2026-11-23 00:54:19,134 | INFO    | DONE data/scripts/processing/process_longrun_2006.py
-2026-11-23 00:54:19,134 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_housing_wealth.py
-2026-11-23 00:54:20,233 | INFO    | DONE data/scripts/processing/process_housing_wealth.py
-2026-11-23 00:54:20,233 | INFO    | RUN [processing] .venv/bin/python3 data/scripts/processing/process_annual_panel.py
-2026-11-23 00:54:22,381 | INFO    | DONE data/scripts/processing/process_annual_panel.py
-2026-11-23 00:54:22,381 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/01_analyze_longrun_2006.py
-2026-11-23 00:54:23,891 | INFO    | DONE empirics/scripts/01_analyze_longrun_2006.py
-2026-11-23 00:54:23,891 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/02_explore_figures.py
-2026-11-23 00:54:24,814 | INFO    | DONE empirics/scripts/02_explore_figures.py
-2026-11-23 00:54:24,814 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/03_analyze_housing_wealth.py
-2026-11-23 00:54:51,980 | INFO    | DONE empirics/scripts/03_analyze_housing_wealth.py
-2026-11-23 00:54:51,981 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/05_analyze_event_study.py
-2026-11-23 00:55:15,714 | INFO    | DONE empirics/scripts/05_analyze_event_study.py
-2026-11-23 00:55:15,714 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/06_explore_housing_figures.py
-2026-11-23 00:55:16,895 | INFO    | DONE empirics/scripts/06_explore_housing_figures.py
-2026-11-23 00:55:16,895 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/07_robust_flexible_controls.py
-2026-11-23 00:56:27,697 | INFO    | DONE empirics/scripts/07_robust_flexible_controls.py
-2026-11-23 00:56:27,697 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/08_analyze_second_flat.py
-2026-11-23 00:56:36,389 | INFO    | DONE empirics/scripts/08_analyze_second_flat.py
-2026-11-23 00:56:36,389 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/09_robust_permutation.py
-2026-11-23 00:57:55,682 | INFO    | DONE empirics/scripts/09_robust_permutation.py
-2026-11-23 00:57:55,682 | INFO    | RUN [empirics] .venv/bin/python3 empirics/scripts/10_explore_robustness_figures.py
-2026-11-23 00:57:56,325 | INFO    | DONE empirics/scripts/10_explore_robustness_figures.py
-2026-11-23 00:57:56,325 | INFO    | END run_all
+2026-11-23 01:37:06,052 | INFO    | START run_all.py --only 11_robust_sign_diagnostics: 1 steps
+2026-11-23 01:37:06,103 | INFO    | RUN [empirics] python3 empirics/scripts/11_robust_sign_diagnostics.py
+2026-11-23 01:37:10,073 | INFO    | DONE empirics/scripts/11_robust_sign_diagnostics.py
+2026-11-23 01:37:10,073 | INFO    | END run_all

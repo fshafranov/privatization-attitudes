@@ -20,3 +20,7 @@ data/raw/statbase_housing/*.html
 
 # Literature PDFs (copyrighted; kept locally)
 papers/*.pdf
+
+# Regional prices parsed from statbase.ru pages: not redistributed (rebuild with the collection
+# and cleaning scripts). Decided 2026-11-23.
+data/clean/housing_prices/

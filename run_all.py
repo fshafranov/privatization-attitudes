@@ -30,6 +30,14 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+
+def shown(x) -> str:
+    """Path for logs, relative to the project root: logs are committed, home paths are not."""
+    try:
+        return str(Path(x).resolve().relative_to(ROOT))
+    except ValueError:
+        return Path(x).name
 RSCRIPT = os.environ.get("RSCRIPT", "Rscript")
 CHECK_SCRIPT = "data/scripts/checks/check_baseline.py"
 
@@ -97,7 +105,7 @@ def log_attempt(what: str, command: str, outcome: str, details: str) -> None:
 
 def session_info(steps) -> None:
     """Document the software environment of this run (G3)."""
-    lines = [f"Python {platform.python_version()} ({sys.executable})", f"Platform {platform.platform()}",
+    lines = [f"Python {platform.python_version()} ({shown(sys.executable)})", f"Platform {platform.platform()}",
              f"Commit {git_commit()}", ""]
     if shutil.which("uv"):
         out = subprocess.run(["uv", "pip", "freeze", "--python", sys.executable],
@@ -165,7 +173,7 @@ def main():
 
     for stage, script, _ in steps:
         cmd = command_for(script)
-        log.info("RUN [%s] %s", stage, " ".join(cmd))
+        log.info("RUN [%s] %s", stage, " ".join(shown(c) if c == sys.executable else c for c in cmd))
         rc = subprocess.run(cmd, cwd=ROOT).returncode
         if rc != 0 or (script.endswith(".do") and stata_failed(script)):
             log.error("FAILED %s (exit %d); see its log", script, rc)

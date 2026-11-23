@@ -1,10 +1,10 @@
-2026-11-23 00:32:46 [info     ] start                            script=robust_sign_diagnostics
-2026-11-23 00:32:47 [info     ] leave_one_out                    max=-0.0821 min=-0.2296 n_negative=32 n_regions=32 outcome=idx_trust_state r7=-0.1709 script=robust_sign_diagnostics
-2026-11-23 00:32:48 [info     ] leave_one_out                    max=-0.0047 min=-0.2151 n_negative=32 n_regions=32 outcome=idx_democracy r7=-0.1197 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] leave_one_out                    max=-0.295 min=-0.5166 n_negative=32 n_regions=32 outcome=trust_government r7=-0.4019 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] price_variation                  script=robust_sign_diagnostics table='\n year  national_mean_log_price  national_change_since_2006  cross_region_sd_of_change\n 2006                   10.208                       0.000                      0.000\n 2012                   10.749                       0.541                      0.183\n 2017                   10.785                       0.577                      0.196\n 2018                   10.815                       0.607                      0.193'
-2026-11-23 00:32:49 [info     ] wrote                            cols=14 file=empirics/results/robust_sign_diagnostics_trend.csv rows=9 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] wrote                            cols=4 file=empirics/results/robust_sign_diagnostics_prices.csv rows=4 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] wrote                            cols=5 file=empirics/results/robust_sign_diagnostics_loo.csv rows=96 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] wrote                            cols=14 file=empirics/results/robust_sign_diagnostics.csv rows=3 script=robust_sign_diagnostics
-2026-11-23 00:32:49 [info     ] end                              script=robust_sign_diagnostics
+2026-11-23 00:37:06 [info     ] start                            script=robust_sign_diagnostics
+2026-11-23 00:37:08 [info     ] leave_one_out                    max=-0.0821 min=-0.2296 n_negative=32 n_regions=32 outcome=idx_trust_state r7=-0.1709 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] leave_one_out                    max=-0.0047 min=-0.2151 n_negative=32 n_regions=32 outcome=idx_democracy r7=-0.1197 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] leave_one_out                    max=-0.295 min=-0.5166 n_negative=32 n_regions=32 outcome=trust_government r7=-0.4019 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] price_variation                  script=robust_sign_diagnostics table='\n year  national_mean_log_price  national_change_since_2006  cross_region_sd_of_change\n 2006                   10.208                       0.000                      0.000\n 2012                   10.749                       0.541                      0.183\n 2017                   10.785                       0.577                      0.196\n 2018                   10.815                       0.607                      0.193'
+2026-11-23 00:37:09 [info     ] wrote                            cols=14 file=empirics/results/robust_sign_diagnostics_trend.csv rows=9 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] wrote                            cols=4 file=empirics/results/robust_sign_diagnostics_prices.csv rows=4 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] wrote                            cols=5 file=empirics/results/robust_sign_diagnostics_loo.csv rows=96 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] wrote                            cols=14 file=empirics/results/robust_sign_diagnostics.csv rows=3 script=robust_sign_diagnostics
+2026-11-23 00:37:09 [info     ] end                              script=robust_sign_diagnostics
