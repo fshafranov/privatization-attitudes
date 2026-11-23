@@ -229,6 +229,7 @@ histories are recorded before the outcome but are not assigned at random.
 | R1 | Ordered outcome (j223 1–4) | not written | planned only if a main block shows signal |
 | R2 | Flexible baseline x year controls (all, LASSO-selected, + local income) | `empirics/scripts/07_robust_flexible_controls.py` | done |
 | R3 | Permutation of regional price paths | `empirics/scripts/09_robust_permutation.py` | done |
+| R4 | Sign diagnostics: owner x year trend without prices, national vs cross-regional price variation, leave-one-region-out of r7 | `empirics/scripts/11_robust_sign_diagnostics.py` | done |
 
 ## 6. Change log
 | Date | Change | Reason | Pre-specified? |
