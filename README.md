@@ -31,8 +31,8 @@ $$
 | + owner-by-year FE | + θ<sub>Own,t</sub> | **regional differences only** | −0.171 (p 0.29) | −0.120 (p 0.51) |
 
 Standard errors are clustered by region for Rosstat prices (by sampling unit for the survey
-index); p-values are wild cluster bootstrap. The panel has about 6,950 adults observed in at least
-two of the four rounds, three quarters of them owners in 2006.
+index); p-values are wild cluster bootstrap. The panel has 6,985 adults observed in at least
+two of the four rounds, 77% of them owners in 2006.
 
 **Why the sign changes in the last row.** Prices rose almost everywhere at once (by about 0.54 log
 points between 2006 and 2012). In the first three rows, owners' price exposure therefore moves mostly
