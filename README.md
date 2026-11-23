@@ -56,6 +56,21 @@ the state ("more to lose") or more *demanding* of it (protection of property, ri
    losing those shares, the household's flat privatization path, running a 1980s cooperative)
    predicts the answer. Four attitude indices (market legitimacy, democratic values, trust in
    state institutions, approval of the state) show nothing that survives multiple-testing correction.
+
+   *The two 1990s histories.* Households living in a privatized flat rose from 55% in 1994 to 71% in
+   2002 (the last year RLMS asks). Employed people who co-own their employer fell from 24% in 1994
+   to under 4% by 2006, when the attitude questions were asked, and stayed at 2-3% afterwards.
+
+   ![Privatized flats and employee share ownership over time](empirics/results/figures/fig3_histories.png)
+
+   *2006 views by 1990s history.* Among all adults, 46% say enterprises should return to the state,
+   11% that they should be re-privatized another way, and 30% that they should stay with their owners
+   (with or without extra payments); 13% don't know. Every history group looks much the same. The
+   last row is the right comparison for 1980s cooperators: the cooperative question was asked only of
+   people aged 35 and over.
+
+   ![2006 views on revising privatization, by 1990s history](empirics/results/figures/fig2_answer_mix.png)
+
 2. **Housing wealth** (`03_analyze_housing_wealth.py`, figure above). Owners in 2006 vs non-owners in
    the same sampling unit and year, as regional house prices change (Rosstat secondary-market
    prices per m2, 32 regions; RLMS rounds 2006, 2012, 2017, 2018 that ask about trust and democratic
