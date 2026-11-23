@@ -67,6 +67,11 @@ Last updated: 2026-11-23
   democracy -0.092, wild p 0.219); 445 people, 329 of them owners.
 - **Event study with owner-by-year FE:** pre-2007 coefficients jointly zero (economic satisfaction
   p 0.634, life satisfaction p 0.352); pooled post-bust 0.060 (wild p 0.726) and -0.185 (wild p 0.440).
+- **Sign diagnostics (R4):** without any price term, owners' trust relative to non-owners rose in
+  2012 (trust index +0.055, p 0.074; trust in government +0.119, p 0.042) while national prices rose
+  0.541 log points; the old specification read this bump as a price effect. Cross-regional price
+  changes vary much less (SD 0.183-0.196) than the national change (0.541-0.607). r7 is negative in
+  all 32 leave-one-region-out runs (trust index -0.230 to -0.082), but not significant.
 - **Bottom line:** no evidence that housing-wealth changes moved owners' political attitudes or
   satisfaction. The only near-significant estimate (trust in government, p about 0.09) points to
   less trust, the opposite of the "more to lose -> loyal" story. Treat as a null result.
@@ -185,3 +190,11 @@ Last updated: 2026-11-23
   NaN (missing categories fixed); nfm1_n asked of about a fifth of households (size counted instead).
 - Key decisions: D17-D19.
 - Commit: see git log on feature/flexible-controls
+
+### 2026-11-23 (d)
+- Done: R4 `11_robust_sign_diagnostics.py` (owner x year trend, price-variation decomposition,
+  leave-one-region-out); ran it alone (4 s) and twice for byte-identical output.
+- Succeeded: explains the sign flip: old estimate = owners' 2012 trend bump x national price path.
+- Failed: nothing.
+- Key decisions: none new (R4 documents D19).
+- Commit: see git log on feature/sign-diagnostics
